@@ -50,14 +50,14 @@
     <activity android:name=".MainActivity" android:exported="true">
     </activity>
 
-		<activity-alias android:label="PPP-SOS" android:exported="true" android:icon="@mipmap/ic_launcher" android:name="com.baresosapp.MainActivitydefault" android:enabled="true" android:targetActivity=".MainActivity">
+		<activity-alias android:label="PPP-SOS" android:exported="true" android:icon="@mipmap/ic_launcher" android:name="com.baresosapp.MainActivitydefault" android:enabled="false" android:targetActivity=".MainActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN"/>
 				<category android:name="android.intent.category.LAUNCHER"/>
 			</intent-filter>
 		</activity-alias>
 
-		<activity-alias android:label="BB" android:exported="true" android:icon="@mipmap/bb" android:name="com.baresosapp.MainActivitybb" android:enabled="false" android:targetActivity=".MainActivity">
+		<activity-alias android:label="BB" android:exported="true" android:icon="@mipmap/bb" android:name="com.baresosapp.MainActivitybb" android:enabled="true" android:targetActivity=".MainActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN"/>
 				<category android:name="android.intent.category.LAUNCHER"/>

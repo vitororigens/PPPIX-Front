@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "name": "PPP-SOS",
+    "slug": "bare-sos-app",
+    "version": "1.0.2",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "PPP-SOS",
+  "displayName": "PPP-SOS"
+}

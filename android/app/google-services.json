@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "720715148559",
+    "project_id": "sos-app-371818",
+    "storage_bucket": "sos-app-371818.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720715148559:android:68ec899a17b7114ddfa27a",
+        "android_client_info": {
+          "package_name": "com.baresosapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "720715148559-rd8hknminthj69gk75jek2bo7qtsag6n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqPFoUDfeyzbuZA-eMJgFNFvKRDT_9dMw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "720715148559-rd8hknminthj69gk75jek2bo7qtsag6n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

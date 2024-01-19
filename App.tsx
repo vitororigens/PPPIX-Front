@@ -21,6 +21,7 @@ import AlertProvider from "./src/contexts/AlertContext"
 
 import { NavigationContainer } from "@react-navigation/native";
 import axios from 'axios'
+import { TabsApp } from "./src/routes/AppRoutes";
 EStyleSheet.build({});
 
 export default function App() {
@@ -52,7 +53,7 @@ export default function App() {
                         translucent
                       />
 
-                      {!fontsLoaded ? <Loading /> : <Router />}
+                      {!fontsLoaded ? <Loading /> : <TabsApp />}
                     </SecurityProvider>
                   </ContactsProvider>
                 </AlertProvider>

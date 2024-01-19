@@ -29,7 +29,7 @@ export default function Security() {
     setAppState(nextAppState);
   };
 
-  const handleChangeLocation = async ({ value, props }: any) => {
+  const handleChangeLocation = async ({ value, props }) => {
     console.log(value);
   
     if (value) {

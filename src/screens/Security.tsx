@@ -29,31 +29,34 @@ export default function Security() {
     setAppState(nextAppState);
   };
 
-  const handleChangeLocation = async ({value, props}: any) => {
-    console.log(value)
-
+  const handleChangeLocation = async ({ value, props }: any) => {
+    console.log(value);
+  
     if (value) {
-      console.log(props.item.iconName)
+      console.log(props.item.iconName);
       changeIcon(props.item.iconName)
-      .then(() => {
-        setCurrentIcon(props.item.iconName);
-        Toast.show({
-          title: "Icon changed",
-          duration: 2000,
+        .then(() => {
+          setCurrentIcon(props.item.iconName);
+          Toast.show({
+            title: "Icon changed",
+            duration: 2000,
+          });
+        })
+        .catch((error) => {
+          console.error("Error changing icon:", error);
+          // Adicione lógica de tratamento de erro, se necessário.
         });
-      })
-      
     } else {
-      /*
+      // Se você quiser restaurar o ícone padrão, forneça o nome padrão.
       await changeIcon("default");
       setCurrentIcon("default");
       Toast.show({
-        title: "Icon changed",
+        title: "Icon restored",
         duration: 2000,
       });
-      */
     }
-    }
+  };
+  
     
 
   useFocusEffect(

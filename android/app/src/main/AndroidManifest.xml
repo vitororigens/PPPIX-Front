@@ -70,12 +70,6 @@
 				<category android:name="android.intent.category.LAUNCHER"/>
 			</intent-filter>
 		</activity-alias>
-			<activity-alias android:label="ABCBrasil" android:exported="true" android:icon="@mipmap/abcbrasil" android:name="com.baresosapp.MainActivityabcbrasil" android:enabled="false" android:targetActivity=".MainActivity">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN"/>
-				<category android:name="android.intent.category.LAUNCHER"/>
-			</intent-filter>
-		</activity-alias>
 		
     <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" android:exported="false"/>
   </application>

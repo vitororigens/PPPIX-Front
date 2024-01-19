@@ -1,4 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.baresosapp">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="app.ppix.io.mobile">
 
   <uses-permission android:name="android.permission.INTERNET"/>
 	<!-- Permissao de ver os apps instalados -->
@@ -50,21 +50,21 @@
     <activity android:name=".MainActivity" android:exported="true">
     </activity>
 
-		<activity-alias android:label="PPP-SOS" android:exported="true" android:icon="@mipmap/ic_launcher" android:name="com.baresosapp.MainActivitydefault" android:enabled="false" android:targetActivity=".MainActivity">
+		<activity-alias android:label="PPP-SOS" android:exported="true" android:icon="@mipmap/ic_launcher" android:name="app.ppix.io.mobile.MainActivitydefault" android:enabled="true" android:targetActivity=".MainActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN"/>
 				<category android:name="android.intent.category.LAUNCHER"/>
 			</intent-filter>
 		</activity-alias>
 
-		<activity-alias android:label="BB" android:exported="true" android:icon="@mipmap/bb" android:name="com.baresosapp.MainActivitybb" android:enabled="true" android:targetActivity=".MainActivity">
+		<activity-alias android:label="BB" android:exported="true" android:icon="@mipmap/bb" android:name="app.ppix.io.mobile.MainActivitybb" android:enabled="false" android:targetActivity=".MainActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN"/>
 				<category android:name="android.intent.category.LAUNCHER"/>
 			</intent-filter>
 		</activity-alias>
 
-		<activity-alias android:label="Nubank" android:exported="true" android:icon="@mipmap/nubank" android:name="com.baresosapp.MainActivitynubank" android:enabled="false" android:targetActivity=".MainActivity">
+		<activity-alias android:label="Nubank" android:exported="true" android:icon="@mipmap/nubank" android:name="app.ppix.io.mobile.MainActivitynubank" android:enabled="false" android:targetActivity=".MainActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN"/>
 				<category android:name="android.intent.category.LAUNCHER"/>

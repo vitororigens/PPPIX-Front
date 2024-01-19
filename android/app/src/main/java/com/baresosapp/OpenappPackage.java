@@ -1,4 +1,4 @@
-package com.baresosapp;
+package app.ppix.io.mobile;
 
 import java.util.Arrays;
 import java.util.Collections;

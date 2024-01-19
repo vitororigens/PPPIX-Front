@@ -33,7 +33,7 @@ messaging().setBackgroundMessageHandler(async (remoteMessage) => {
             channelId: 'som',
             sound: 'alerta',
             pressAction: {
-                launchActivity: 'com.baresosapp.MainActivity',
+                launchActivity: 'app.ppix.io.mobile.MainActivity',
                 id: "default",
             },
             actions: [

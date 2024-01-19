@@ -1,4 +1,4 @@
-// package com.baresosapp;
+// package app.ppix.io.mobile;
 
 // import android.app.Activity;
 

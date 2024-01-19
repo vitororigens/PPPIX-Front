@@ -1,4 +1,4 @@
-package com.baresosapp.newarchitecture;
+package app.ppix.io.mobile.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -20,9 +20,9 @@ import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.baresosapp.BuildConfig;
-import com.baresosapp.newarchitecture.components.MainComponentsRegistry;
-import com.baresosapp.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import app.ppix.io.mobile.BuildConfig;
+import app.ppix.io.mobile.newarchitecture.components.MainComponentsRegistry;
+import app.ppix.io.mobile.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

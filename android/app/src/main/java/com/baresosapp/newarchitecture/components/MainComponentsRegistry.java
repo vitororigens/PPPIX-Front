@@ -1,4 +1,4 @@
-package com.baresosapp.newarchitecture.components;
+package app.ppix.io.mobile.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;

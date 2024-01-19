@@ -1,36 +1,26 @@
 {
   "project_info": {
-    "project_number": "720715148559",
-    "project_id": "sos-app-371818",
-    "storage_bucket": "sos-app-371818.appspot.com"
+    "project_number": "11117611081",
+    "project_id": "ppix-41bf8",
+    "storage_bucket": "ppix-41bf8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:720715148559:android:68ec899a17b7114ddfa27a",
+        "mobilesdk_app_id": "1:11117611081:android:8647b2e1731e43e3619798",
         "android_client_info": {
-          "package_name": "com.baresosapp"
+          "package_name": "app.ppix.io.mobile"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "720715148559-rd8hknminthj69gk75jek2bo7qtsag6n.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCqPFoUDfeyzbuZA-eMJgFNFvKRDT_9dMw"
+          "current_key": "AIzaSyD4iQ3GHxGZSSDrRA3QOf2_fXfWqOzHu3A"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "720715148559-rd8hknminthj69gk75jek2bo7qtsag6n.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

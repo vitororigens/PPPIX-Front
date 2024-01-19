@@ -1,4 +1,4 @@
-package com.baresosapp.newarchitecture.modules;
+package app.ppix.io.mobile.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;

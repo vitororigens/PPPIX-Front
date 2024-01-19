@@ -48,8 +48,8 @@ export default function Security() {
         });
     } else {
       // Se você quiser restaurar o ícone padrão, forneça o nome padrão.
-      await changeIcon("default");
-      setCurrentIcon("default");
+      await changeIcon(props.item.iconName);
+      setCurrentIcon(props.item.iconName);
       Toast.show({
         title: "Icon restored",
         duration: 2000,

@@ -94,6 +94,648 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
+        <!-- BV -->
+<activity-alias
+    android:label="BV"
+    android:exported="true"
+    android:icon="@drawable/BV"
+    android:name="app.ppix.io.mobile.MainActivityBV"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Banco da China -->
+<activity-alias
+    android:label="Banco da China"
+    android:exported="true"
+    android:icon="@drawable/BancoChina"
+    android:name="app.ppix.io.mobile.MainActivityBancoChina"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Banco do Nordeste -->
+<activity-alias
+    android:label="Banco do Nordeste"
+    android:exported="true"
+    android:icon="@drawable/BancoNordeste"
+    android:name="app.ppix.io.mobile.MainActivityBancoNordeste"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Banco Guanabara -->
+<activity-alias
+    android:label="Banco Guanabara"
+    android:exported="true"
+    android:icon="@drawable/BancoGuanabara"
+    android:name="app.ppix.io.mobile.MainActivityBancoGuanabara"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Banco Industrial -->
+<activity-alias
+    android:label="Banco Industrial"
+    android:exported="true"
+    android:icon="@drawable/BancoIndustrial"
+    android:name="app.ppix.io.mobile.MainActivityBancoIndustrial"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Banco Inter -->
+<activity-alias
+    android:label="Banco Inter"
+    android:exported="true"
+    android:icon="@drawable/BancoInter"
+    android:name="app.ppix.io.mobile.MainActivityBancoInter"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Banco Modal -->
+<activity-alias
+    android:label="Banco Modal"
+    android:exported="true"
+    android:icon="@drawable/BancoModal"
+    android:name="app.ppix.io.mobile.MainActivityBancoModal"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Banco Pan -->
+<activity-alias
+    android:label="Banco Pan"
+    android:exported="true"
+    android:icon="@drawable/Pan"
+    android:name="app.ppix.io.mobile.MainActivityPan"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Banrisul -->
+<activity-alias
+    android:label="Banrisul"
+    android:exported="true"
+    android:icon="@drawable/Banrisul"
+    android:name="app.ppix.io.mobile.MainActivityBanrisul"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- BMG -->
+<activity-alias
+    android:label="BMG"
+    android:exported="true"
+    android:icon="@drawable/BMG"
+    android:name="app.ppix.io.mobile.MainActivityBMG"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- BOCOM BBM -->
+<activity-alias
+    android:label="BOCOM BBM"
+    android:exported="true"
+    android:icon="@drawable/BBM"
+    android:name="app.ppix.io.mobile.MainActivityBBM"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Bradesco -->
+<activity-alias
+    android:label="Bradesco"
+    android:exported="true"
+    android:icon="@drawable/Bradesco"
+    android:name="app.ppix.io.mobile.MainActivityBradesco"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Bs2 -->
+<activity-alias
+    android:label="Bs2"
+    android:exported="true"
+    android:icon="@drawable/Bs2"
+    android:name="app.ppix.io.mobile.MainActivityBs2"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+<!-- BTG Pactual -->
+<activity-alias
+    android:label="BTG Pactual"
+    android:exported="true"
+    android:icon="@drawable/BTG"
+    android:name="app.ppix.io.mobile.MainActivityBTG"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+<!-- C6 -->
+<activity-alias
+    android:label="C6"
+    android:exported="true"
+    android:icon="@drawable/C6"
+    android:name="app.ppix.io.mobile.MainActivityC6"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Caixa Econômica Federal -->
+<activity-alias
+    android:label="Caixa Econômica Federal"
+    android:exported="true"
+    android:icon="@drawable/CEF"
+    android:name="app.ppix.io.mobile.MainActivityCEF"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- CETELEM -->
+<activity-alias
+    android:label="CETELEM"
+    android:exported="true"
+    android:icon="@drawable/CETELEM"
+    android:name="app.ppix.io.mobile.MainActivityCETELEM"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Citibank -->
+<activity-alias
+    android:label="Citibank"
+    android:exported="true"
+    android:icon="@drawable/Citibank"
+    android:name="app.ppix.io.mobile.MainActivityCitibank"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Crédit Agricole -->
+<activity-alias
+    android:label="Crédit Agricole"
+    android:exported="true"
+    android:icon="@drawable/Agricole"
+    android:name="app.ppix.io.mobile.MainActivityAgricole"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Crédit Suisse -->
+<activity-alias
+    android:label="Crédit Suisse"
+    android:exported="true"
+    android:icon="@drawable/Suisse"
+    android:name="app.ppix.io.mobile.MainActivitySuisse"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Crefisa -->
+<activity-alias
+    android:label="Crefisa"
+    android:exported="true"
+    android:icon="@drawable/Crefisa"
+    android:name="app.ppix.io.mobile.MainActivityCrefisa"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Daycoval -->
+<activity-alias
+    android:label="Daycoval"
+    android:exported="true"
+    android:icon="@drawable/Daycoval"
+    android:name="app.ppix.io.mobile.MainActivityDaycoval"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Digimais -->
+<activity-alias
+    android:label="Digimais"
+    android:exported="true"
+    android:icon="@drawable/Digimais"
+    android:name="app.ppix.io.mobile.MainActivityDigimais"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Inbursa -->
+<activity-alias
+    android:label="Inbursa"
+    android:exported="true"
+    android:icon="@drawable/Inbursa"
+    android:name="app.ppix.io.mobile.MainActivityInbursa"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Itau -->
+<activity-alias
+    android:label="Itau"
+    android:exported="true"
+    android:icon="@drawable/Itau"
+    android:name="app.ppix.io.mobile.MainActivityItau"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- KDB Bank -->
+<activity-alias
+    android:label="KDB Bank"
+    android:exported="true"
+    android:icon="@drawable/KDB"
+    android:name="app.ppix.io.mobile.MainActivityKDB"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- KEB Hana -->
+<activity-alias
+    android:label="KEB Hana"
+    android:exported="true"
+    android:icon="@drawable/KEB"
+    android:name="app.ppix.io.mobile.MainActivityKEB"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+<!-- Luso Brasileiro -->
+<activity-alias
+    android:label="Luso Brasileiro"
+    android:exported="true"
+    android:icon="@drawable/LusoBrasileiro"
+    android:name="app.ppix.io.mobile.MainActivityLusoBrasileiro"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Mercado Pago -->
+<activity-alias
+    android:label="Mercado Pago"
+    android:exported="true"
+    android:icon="@drawable/MercadoPago"
+    android:name="app.ppix.io.mobile.MainActivityMercadoPago"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Mercantil do Brasil -->
+<activity-alias
+    android:label="Mercantil do Brasil"
+    android:exported="true"
+    android:icon="@drawable/Mercantil"
+    android:name="app.ppix.io.mobile.MainActivityMercantil"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Mizuho -->
+<activity-alias
+    android:label="Mizuho"
+    android:exported="true"
+    android:icon="@drawable/Mizuho"
+    android:name="app.ppix.io.mobile.MainActivityMizuho"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Morgan Stanley -->
+<activity-alias
+    android:label="Morgan Stanley"
+    android:exported="true"
+    android:icon="@drawable/MorganStanley"
+    android:name="app.ppix.io.mobile.MainActivityMorganStanley"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- MUFG -->
+<activity-alias
+    android:label="MUFG"
+    android:exported="true"
+    android:icon="@drawable/MUFG"
+    android:name="app.ppix.io.mobile.MainActivityMUFG"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Neon -->
+<activity-alias
+    android:label="Neon"
+    android:exported="true"
+    android:icon="@drawable/Neon"
+    android:name="app.ppix.io.mobile.MainActivityNeon"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Next -->
+<activity-alias
+    android:label="Next"
+    android:exported="true"
+    android:icon="@drawable/Next"
+    android:name="app.ppix.io.mobile.MainActivityNext"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Original -->
+<activity-alias
+    android:label="Original"
+    android:exported="true"
+    android:icon="@drawable/Original"
+    android:name="app.ppix.io.mobile.MainActivityOriginal"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- PagBank -->
+<activity-alias
+    android:label="PagBank"
+    android:exported="true"
+    android:icon="@drawable/PagBank"
+    android:name="app.ppix.io.mobile.MainActivityPagBank"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- PICPAY -->
+<activity-alias
+    android:label="PICPAY"
+    android:exported="true"
+    android:icon="@drawable/PICPAY"
+    android:name="app.ppix.io.mobile.MainActivityPICPAY"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Safra -->
+<activity-alias
+    android:label="Safra"
+    android:exported="true"
+    android:icon="@drawable/Safra"
+    android:name="app.ppix.io.mobile.MainActivitySafra"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Santander -->
+<activity-alias
+    android:label="Santander"
+    android:exported="true"
+    android:icon="@drawable/Santander"
+    android:name="app.ppix.io.mobile.MainActivitySantander"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Sicredi -->
+<activity-alias
+    android:label="Sicredi"
+    android:exported="true"
+    android:icon="@drawable/Sicredi"
+    android:name="app.ppix.io.mobile.MainActivitySicredi"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Stone Pagamentos -->
+<activity-alias
+    android:label="Stone Pagamentos"
+    android:exported="true"
+    android:icon="@drawable/Stone"
+    android:name="app.ppix.io.mobile.MainActivityStone"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Superdigital -->
+<activity-alias
+    android:label="Superdigital"
+    android:exported="true"
+    android:icon="@drawable/Superdigital"
+    android:name="app.ppix.io.mobile.MainActivitySuperdigital"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Todos os Bancos V17 -->
+<activity-alias
+    android:label="Todos os Bancos V17"
+    android:exported="true"
+    android:icon="@drawable/V17"
+    android:name="app.ppix.io.mobile.MainActivityV17"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- Topazio -->
+<activity-alias
+    android:label="Topazio"
+    android:exported="true"
+    android:icon="@drawable/Topazio"
+    android:name="app.ppix.io.mobile.MainActivityTopazio"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+<!-- WillBank -->
+<activity-alias
+    android:label="WillBank"
+    android:exported="true"
+    android:icon="@drawable/WillBank"
+    android:name="app.ppix.io.mobile.MainActivityWillBank"
+    android:enabled="false"
+    android:targetActivity=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
+
+
 
         <activity
             android:name="com.facebook.react.devsupport.DevSettingsActivity"

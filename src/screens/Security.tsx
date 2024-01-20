@@ -1,7 +1,7 @@
 import { Box, FlatList, Flex, Heading, Switch, Text, Toast } from "native-base";
 import React, { useCallback, useEffect } from "react";
 import { Header } from "../components/Header";
-import { changeIcon } from "react-native-change-icon";
+import { changeIcon, getIcon } from "react-native-change-icon";
 import { useFocusEffect } from "@react-navigation/native";
 import { Platform, AppState } from "react-native";
 import { dataApps } from "../mocks/dataApps";
@@ -28,16 +28,30 @@ export default function Security() {
     setAppState(nextAppState);
   };
 
-useFocusEffect(
-  useCallback(() => {
-    AppState.addEventListener("change", handleAppStateChange);
+  useFocusEffect(
+    useCallback(() => {
+      try{
+        async function loadIcon() {
+          if (Platform.OS === "android") {
+            const response = await getIcon();
+            console.log(
+              "🚀 ~ file: Security.tsx:28 ~ loadIcon ~ response",
+              response
+            );
 
-    // Realize um type casting para 'any' para evitar o erro de compilação
-    return () => {
-      (AppState as any).removeEventListener("change", handleAppStateChange);
-    };
-  }, [appState])
-);
+            setCurrentIcon(response);
+          }
+        }
+        loadIcon();
+
+        AppState.addEventListener("change", handleAppStateChange);
+     } catch {
+
+     }
+
+      return () => {};
+    }, [])
+  );
 
 
   const handleChangeLocation = async (value: boolean, props: IAppItemProps) => {

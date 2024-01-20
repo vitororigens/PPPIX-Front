@@ -1,7 +1,7 @@
 import { Box, FlatList, Flex, Heading, Switch, Text, Toast } from "native-base";
 import React, { useCallback, useEffect } from "react";
 import { Header } from "../components/Header";
-import { changeIcon, getIcon } from "react-native-change-icon";
+import { changeIcon, getIcon,  } from "react-native-change-icon";
 import { useFocusEffect } from "@react-navigation/native";
 import { Platform, AppState } from "react-native";
 import { dataApps } from "../mocks/dataApps";
@@ -13,7 +13,7 @@ interface IAppItemProps {
     colorIcon: string;
     icon: React.ReactNode;
     iconName: string;
-    lenghtApp: string;
+    lengthApp: string;
   };
 }
 
@@ -28,34 +28,41 @@ export default function Security() {
     }
     setAppState(nextAppState);
   };
-
-  const handleChangeLocation = async ({ value, props }) => {
+  const handleChangeLocation = async (value: boolean, props: IAppItemProps) => {
+  
     console.log(value);
   
     if (value) {
       console.log(props.item.iconName);
-      changeIcon(props.item.iconName)
+  
+      try {
+        await changeIcon(props.item.iconName);
+        setCurrentIcon(props.item.iconName);
+        Toast.show({
+          title: "Icon changed",
+          duration: 2000,
+        });
+      } catch (error) {
+        console.error("Error changing icon:", error);
+        // Add specific error handling logic here if needed.
+      }
+    } else {
+      // If you want to restore the default icon, provide the default name.
+      changeIcon("default")
         .then(() => {
-          setCurrentIcon(props.item.iconName);
+          setCurrentIcon("default");
           Toast.show({
-            title: "Icon changed",
+            title: "Icon restored",
             duration: 2000,
           });
         })
         .catch((error) => {
-          console.error("Error changing icon:", error);
-          // Adicione lógica de tratamento de erro, se necessário.
+          console.error("Error restoring default icon:", error);
+          // Add specific error handling logic here if needed.
         });
-    } else {
-      // Se você quiser restaurar o ícone padrão, forneça o nome padrão.
-      await changeIcon(props.item.iconName);
-      setCurrentIcon(props.item.iconName);
-      Toast.show({
-        title: "Icon restored",
-        duration: 2000,
-      });
     }
   };
+  
   
     
 
@@ -103,7 +110,7 @@ export default function Security() {
               {props.item.nameApp}
             </Text>
             <Text fontFamily={"body"} color={"gray.200"}>
-              {props.item.lenghtApp} mb
+              {props.item.lengthApp} mb
             </Text>
           </Box>
         </Flex>

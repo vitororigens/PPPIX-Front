@@ -63,33 +63,6 @@ export default function Security() {
     }
   };
   
-  
-    
-
-  useFocusEffect(
-    useCallback(() => {
-      try{
-        async function loadIcon() {
-          if (Platform.OS === "android") {
-            const response = await getIcon();
-            console.log(
-              "🚀 ~ file: Security.tsx:28 ~ loadIcon ~ response",
-              response
-            );
-
-            setCurrentIcon(response);
-          }
-        }
-        loadIcon();
-
-        AppState.addEventListener("change", _handleAppStateChange);
-     } catch {
-
-     }
-
-      return () => {};
-    }, [])
-  );
 
   const AppItem = (props: IAppItemProps) => {
     return (

@@ -1,7 +1,7 @@
 import { Box, FlatList, Flex, Heading, Switch, Text, Toast } from "native-base";
 import React, { useCallback, useEffect } from "react";
 import { Header } from "../components/Header";
-import { changeIcon } from "react-native-change-icon";
+import { changeIcon, getIcon } from "react-native-change-icon";
 import { useFocusEffect } from "@react-navigation/native";
 import { Platform, AppState } from "react-native";
 import { dataApps } from "../mocks/dataApps";
@@ -13,57 +13,73 @@ interface IAppItemProps {
     colorIcon: string;
     icon: React.ReactNode;
     iconName: string;
-    lengthApp: string;
+    lenghtApp: string;
   };
 }
 
 export default function Security() {
   const [currentIcon, setCurrentIcon] = React.useState("");
+
   const [appState, setAppState] = React.useState(AppState.currentState);
 
-  const handleAppStateChange = (nextAppState: any) => {
+  const _handleAppStateChange = (nextAppState: any) => {
     if (appState.match(/inactive|background/) && nextAppState === "active") {
       console.log("App has come to the foreground!");
     }
     setAppState(nextAppState);
   };
 
-  useFocusEffect(
-    useCallback(() => {
-      AppState.addEventListener("change", handleAppStateChange);
-  
-      // Realize um type casting para 'any' para evitar o erro de compilação
-      return () => {
-        (AppState as any).removeEventListener("change", handleAppStateChange);
-      };
-    }, [appState])
-  );
-  
+  const handleChangeLocation = async (value, props) => {
+    console.log(value)
 
-  const handleChangeLocation = async (value: boolean, props: IAppItemProps) => {
-    console.log(value);
-
-    try {
-      if (value) {
-        await changeIcon(props.item.iconName);
+    if (value) {
+      console.log(props.item.iconName)
+      changeIcon(props.item.iconName)
+      .then(() => {
         setCurrentIcon(props.item.iconName);
         Toast.show({
           title: "Icon changed",
           duration: 2000,
         });
-      } else {
-        await changeIcon("default");
-        setCurrentIcon("default");
-        Toast.show({
-          title: "Icon restored",
-          duration: 2000,
-        });
-      }
-    } catch (error) {
-      console.error("Error changing icon:", error);
-      // Adicione lógica de tratamento de erro específica aqui, se necessário.
+      })
+      
+    } else {
+      /*
+      await changeIcon("default");
+      setCurrentIcon("default");
+      Toast.show({
+        title: "Icon changed",
+        duration: 2000,
+      });
+      */
     }
-  };
+    }
+    
+
+  useFocusEffect(
+    useCallback(() => {
+      try{
+        async function loadIcon() {
+          if (Platform.OS === "android") {
+            const response = await getIcon();
+            console.log(
+              "🚀 ~ file: Security.tsx:28 ~ loadIcon ~ response",
+              response
+            );
+
+            setCurrentIcon(response);
+          }
+        }
+        loadIcon();
+
+        AppState.addEventListener("change", _handleAppStateChange);
+     } catch {
+
+     }
+
+      return () => {};
+    }, [])
+  );
 
   const AppItem = (props: IAppItemProps) => {
     return (
@@ -84,7 +100,7 @@ export default function Security() {
               {props.item.nameApp}
             </Text>
             <Text fontFamily={"body"} color={"gray.200"}>
-              {props.item.lengthApp} mb
+              {props.item.lenghtApp} mb
             </Text>
           </Box>
         </Flex>
@@ -93,7 +109,7 @@ export default function Security() {
           <Switch
             value={currentIcon === props.item.iconName}
             onValueChange={async (value) => {
-              handleChangeLocation(value, props);
+              handleChangeLocation(value, props)
             }}
           />
         </Flex>

@@ -44,7 +44,7 @@ import MorganStanley from "../assets/Bancos/Morgan Stanley.svg";
 import MUFG from "../assets/Bancos/MUFG.svg";
 import Neon from "../assets/Bancos/Neon.svg";
 import Next from "../assets/Bancos/Next.svg";
-import Original from "../assets/original.svg";
+import Original from "../assets/Bancos/Original.svg";
 import Pagbank from "../assets/Bancos/PagBank.svg";
 import PICPAY from "../assets/Bancos/PICPAY.svg";
 import Safra from "../assets/Bancos/Safra.svg";
@@ -88,9 +88,9 @@ export const dataApps: IDataAppsProps[] = [
   },
   {
     icon: <ABCBrasil width={40} height={40} />,
-    iconName: "ABC Brasil",
+    iconName: "abc_brasil",
     lengthApp: "252",
-    nameApp: "ABC Brasil",
+    nameApp: "ABC_Brasil",
     colorIcon: "green",
   },
   {
@@ -389,7 +389,7 @@ export const dataApps: IDataAppsProps[] = [
   },
   {
     icon: <Original width={40} height={40} />,
-    iconName: "Original",
+    iconName: "original",
     lengthApp: "252",
     nameApp: "Original",
     colorIcon: "green",

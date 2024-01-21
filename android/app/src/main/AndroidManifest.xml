@@ -61,7 +61,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher"
             android:name="app.ppix.io.mobile.MainActivitydefault"
-            android:enabled="false"
+            android:enabled="true"
             android:targetActivity=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -99,7 +99,19 @@
             android:exported="true"
             android:icon="@mipmap/original"
             android:name="app.ppix.io.mobile.MainActivityoriginal"
-            android:enabled="true"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:label="ABC_Brasil"
+            android:exported="true"
+            android:icon="@mipmap/abc_brasil"
+            android:name="app.ppix.io.mobile.MainActivityabc_brasil"
+            android:enabled="false"
             android:targetActivity=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

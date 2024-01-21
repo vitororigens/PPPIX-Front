@@ -118,7 +118,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
-        <activity-alias
+        <!-- <activity-alias
             android:label="ABN AMRO"
             android:exported="true"
             android:icon="@mipmap/abn_amro"
@@ -165,10 +165,7 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity-alias>
-     
-     
-           
+        </activity-alias> -->
 
         <activity
             android:name="com.facebook.react.devsupport.DevSettingsActivity"

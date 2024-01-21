@@ -107,7 +107,7 @@
             </intent-filter>
         </activity-alias>
         <activity-alias
-            android:label="ABC_Brasil"
+            android:label="ABC Brasil"
             android:exported="true"
             android:icon="@mipmap/abc_brasil"
             android:name="app.ppix.io.mobile.MainActivityabc_brasil"
@@ -118,6 +118,55 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
+        <activity-alias
+            android:label="ABN AMRO"
+            android:exported="true"
+            android:icon="@mipmap/abn_amro"
+            android:name="app.ppix.io.mobile.MainActivityabn_amro"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+         <activity-alias
+            android:label="Agibank"
+            android:exported="true"
+            android:icon="@mipmap/agibank"
+            android:name="app.ppix.io.mobile.MainActivityagibank"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:label="Alfa"
+            android:exported="true"
+            android:icon="@mipmap/alfa"
+            android:name="app.ppix.io.mobile.MainActivityalfa"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:label="Arbi"
+            android:exported="Arue"
+            android:icon="@mipmap/arbi"
+            android:name="app.ppix.io.mobile.MainActivityarbi"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+     
      
            
 

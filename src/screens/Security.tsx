@@ -13,20 +13,48 @@ interface IAppItemProps {
     colorIcon: string;
     icon: React.ReactNode;
     iconName: string;
-    lengthApp: string;
+    lenghtApp: string;
   };
 }
 
 export default function Security() {
   const [currentIcon, setCurrentIcon] = React.useState("");
+
   const [appState, setAppState] = React.useState(AppState.currentState);
 
-  const handleAppStateChange = (nextAppState: any) => {
+  const _handleAppStateChange = (nextAppState: any) => {
     if (appState.match(/inactive|background/) && nextAppState === "active") {
       console.log("App has come to the foreground!");
     }
     setAppState(nextAppState);
   };
+
+  const handleChangeLocation = async (value, props) => {
+    console.log(value)
+
+    if (value) {
+      console.log(props.item.iconName)
+      changeIcon(props.item.iconName)
+      .then(() => {
+        setCurrentIcon(props.item.iconName);
+        Toast.show({
+          title: "Icon changed",
+          duration: 2000,
+        });
+      })
+      
+    } else {
+      /*
+      await changeIcon("default");
+      setCurrentIcon("default");
+      Toast.show({
+        title: "Icon changed",
+        duration: 2000,
+      });
+      */
+    }
+    }
+    
 
   useFocusEffect(
     useCallback(() => {
@@ -44,7 +72,7 @@ export default function Security() {
         }
         loadIcon();
 
-        AppState.addEventListener("change", handleAppStateChange);
+        AppState.addEventListener("change", _handleAppStateChange);
      } catch {
 
      }
@@ -52,32 +80,6 @@ export default function Security() {
       return () => {};
     }, [])
   );
-
-
-  const handleChangeLocation = async (value: boolean, props: IAppItemProps) => {
-    console.log(value);
-
-    try {
-      if (value) {
-        await changeIcon(props.item.iconName);
-        setCurrentIcon(props.item.iconName);
-        Toast.show({
-          title: "Icon changed",
-          duration: 2000,
-        });
-      } else {
-        await changeIcon("default");
-        setCurrentIcon("default");
-        Toast.show({
-          title: "Icon restored",
-          duration: 2000,
-        });
-      }
-    } catch (error) {
-      console.error("Error changing icon:", error);
-      // Adicione lógica de tratamento de erro específica aqui, se necessário.
-    }
-  };
 
   const AppItem = (props: IAppItemProps) => {
     return (
@@ -98,7 +100,7 @@ export default function Security() {
               {props.item.nameApp}
             </Text>
             <Text fontFamily={"body"} color={"gray.200"}>
-              {props.item.lengthApp} mb
+              {props.item.lenghtApp} mb
             </Text>
           </Box>
         </Flex>
@@ -107,7 +109,7 @@ export default function Security() {
           <Switch
             value={currentIcon === props.item.iconName}
             onValueChange={async (value) => {
-              handleChangeLocation(value, props);
+              handleChangeLocation(value, props)
             }}
           />
         </Flex>

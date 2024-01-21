@@ -94,12 +94,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
-        <!-- Original -->
-        <activity-alias
+         <activity-alias
             android:label="Original"
             android:exported="true"
             android:icon="@mipmap/original"
-            ndroid:name="app.ppix.io.mobile.MainActivityoriginal"
+            android:name="app.ppix.io.mobile.MainActivityoriginal"
             android:enabled="false"
             android:targetActivity=".MainActivity">
             <intent-filter>
@@ -107,6 +106,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
+     
            
 
         <activity

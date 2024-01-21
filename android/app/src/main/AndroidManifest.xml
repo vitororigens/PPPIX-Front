@@ -107,20 +107,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
-                <!-- BV -->
-        <activity-alias
-            android:label="BV"
-            android:exported="true"
-            android:icon="@mipmap/BV"
-            android:name="app.ppix.io.mobile.MainActivityBV"
-            android:enabled="false"
-            android:targetActivity=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity-alias>
-
+           
 
         <activity
             android:name="com.facebook.react.devsupport.DevSettingsActivity"

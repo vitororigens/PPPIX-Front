@@ -118,7 +118,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
-        <!-- <activity-alias
+        <activity-alias
             android:label="ABN AMRO"
             android:exported="true"
             android:icon="@mipmap/abn_amro"
@@ -130,7 +130,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
-         <activity-alias
+         <!-- <activity-alias
             android:label="Agibank"
             android:exported="true"
             android:icon="@mipmap/agibank"

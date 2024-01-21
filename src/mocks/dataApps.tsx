@@ -44,7 +44,7 @@ import MorganStanley from "../assets/Bancos/Morgan Stanley.svg";
 import MUFG from "../assets/Bancos/MUFG.svg";
 import Neon from "../assets/Bancos/Neon.svg";
 import Next from "../assets/Bancos/Next.svg";
-import Original from "../assets/Bancos/Original.svg";
+import Original from "../assets/original.svg";
 import Pagbank from "../assets/Bancos/PagBank.svg";
 import PICPAY from "../assets/Bancos/PICPAY.svg";
 import Safra from "../assets/Bancos/Safra.svg";

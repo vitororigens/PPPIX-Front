@@ -61,7 +61,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher"
             android:name="app.ppix.io.mobile.MainActivitydefault"
-            android:enabled="true"
+            android:enabled="false"
             android:targetActivity=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -99,7 +99,7 @@
             android:exported="true"
             android:icon="@mipmap/original"
             android:name="app.ppix.io.mobile.MainActivityoriginal"
-            android:enabled="false"
+            android:enabled="true"
             android:targetActivity=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

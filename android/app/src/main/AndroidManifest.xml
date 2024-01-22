@@ -94,6 +94,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
+
          <activity-alias
             android:label="Original"
             android:exported="true"
@@ -106,6 +107,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
+
         <activity-alias
             android:label="ABC Brasil"
             android:exported="true"
@@ -118,6 +120,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
+
         <activity-alias
             android:label="ABN AMRO"
             android:exported="true"
@@ -130,7 +133,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
-                 <activity-alias
+
+        <activity-alias
             android:label="Agibank"
             android:exported="true"
             android:icon="@mipmap/agibank"
@@ -142,7 +146,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
-                 <activity-alias
+
+        <activity-alias
             android:label="Alfa"
             android:exported="true"
             android:icon="@mipmap/alfa"
@@ -154,7 +159,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
-                 <activity-alias
+
+        <activity-alias
             android:label="Arbi"
             android:exported="true"
             android:icon="@mipmap/arbi"
@@ -166,8 +172,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
-        </activity-alias>
-                 <activity-alias
+
+        <activity-alias
             android:label="Ativa"
             android:exported="true"
             android:icon="@mipmap/ativa"
@@ -179,8 +185,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>   
-        </activity-alias>
-                 <activity-alias
+
+        <activity-alias
             android:label="Avista"
             android:exported="true"
             android:icon="@mipmap/avista"
@@ -191,9 +197,9 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity-alias> 
         </activity-alias>
-                 <activity-alias
+
+        <activity-alias
             android:label="Banco Amazona"
             android:exported="true"
             android:icon="@mipmap/banco_amazonia"
@@ -205,8 +211,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>  
-        </activity-alias>
-                 <activity-alias
+
+        <activity-alias
             android:label="Banco BV"
             android:exported="true"
             android:icon="@mipmap/banco_bv"
@@ -218,8 +224,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>  
-        </activity-alias>
-                 <activity-alias
+
+        <activity-alias
             android:label="Banco da China"
             android:exported="true"
             android:icon="@mipmap/banco_da_china"
@@ -231,8 +237,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
-        </activity-alias>
-                 <activity-alias
+
+        <activity-alias
             android:label="Banco do Nordeste"
             android:exported="true"
             android:icon="@mipmap/banco_do_nordeste"
@@ -244,8 +250,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
-        </activity-alias>
-                 <activity-alias
+
+        <activity-alias
             android:label="Banco Guanabara"
             android:exported="true"
             android:icon="@mipmap/banco_guanabara"
@@ -257,8 +263,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
-        </activity-alias>
-                 <activity-alias
+
+        <activity-alias
             android:label="Banco Industrial"
             android:exported="true"
             android:icon="@mipmap/banco_industrial"
@@ -270,8 +276,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
-        </activity-alias>
-                 <activity-alias
+
+        <activity-alias
             android:label="Banco Inter"
             android:exported="true"
             android:icon="@mipmap/banco_inter"
@@ -283,8 +289,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
-        </activity-alias>
-                 <activity-alias
+
+        <activity-alias
             android:label="Banco Modal"
             android:exported="true"
             android:icon="@mipmap/banco_modal"
@@ -296,8 +302,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
-        </activity-alias>
-                 <activity-alias
+
+        <activity-alias
             android:label="Banco Pan"
             android:exported="true"
             android:icon="@mipmap/banco_pan"
@@ -309,12 +315,259 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
-        </activity-alias>
-                 <activity-alias
+
+        <activity-alias
             android:label="Banrisul"
             android:exported="true"
             android:icon="@mipmap/banrisul"
             android:name="app.ppix.io.mobile.MainActivitybanrisul"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="BMG"
+            android:exported="true"
+            android:icon="@mipmap/bmg"
+            android:name="app.ppix.io.mobile.MainActivitybmg"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="BOCOM BBM"
+            android:exported="true"
+            android:icon="@mipmap/bocom_bbm"
+            android:name="app.ppix.io.mobile.MainActivitybocom_bbm"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="Bradesco"
+            android:exported="true"
+            android:icon="@mipmap/bradesco"
+            android:name="app.ppix.io.mobile.MainActivitybradesco"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="Bs2"
+            android:exported="true"
+            android:icon="@mipmap/bs2"
+            android:name="app.ppix.io.mobile.MainActivitybs2"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="BTG Pactual"
+            android:exported="true"
+            android:icon="@mipmap/btg_pactual"
+            android:name="app.ppix.io.mobile.MainActivitybanrisul"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>    
+
+        <activity-alias
+            android:label="C6"
+            android:exported="true"
+            android:icon="@mipmap/c6"
+            android:name="app.ppix.io.mobile.MainActivityc6"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="CEF"
+            android:exported="true"
+            android:icon="@mipmap/cef"
+            android:name="app.ppix.io.mobile.MainActivitycef"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>  
+
+        <activity-alias
+            android:label="CETELEM"
+            android:exported="true"
+            android:icon="@mipmap/cetelem"
+            android:name="app.ppix.io.mobile.MainActivitycetelem"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="Citibank"
+            android:exported="true"
+            android:icon="@mipmap/citibank"
+            android:name="app.ppix.io.mobile.MainActivitycitibank"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="Crédit Agricole"
+            android:exported="true"
+            android:icon="@mipmap/credit_agricole"
+            android:name="app.ppix.io.mobile.MainActivitycredit_agricole"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="Crédit Suisse"
+            android:exported="true"
+            android:icon="@mipmap/credit_suisse"
+            android:name="app.ppix.io.mobile.MainActivitycredit_suisse"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="Crefisa"
+            android:exported="true"
+            android:icon="@mipmap/crefisa"
+            android:name="app.ppix.io.mobile.MainActivitycrefisa"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="Daycoval"
+            android:exported="true"
+            android:icon="@mipmap/daycoval"
+            android:name="app.ppix.io.mobile.MainActivitydaycoval"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="Digimais"
+            android:exported="true"
+            android:icon="@mipmap/digimais"
+            android:name="app.ppix.io.mobile.MainActivitydigimais"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="Inbursa"
+            android:exported="true"
+            android:icon="@mipmap/inbursa"
+            android:name="app.ppix.io.mobile.MainActivityinbursa"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="Itau"
+            android:exported="true"
+            android:icon="@mipmap/itau"
+            android:name="app.ppix.io.mobile.MainActivityitau"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="KDB Bank"
+            android:exported="true"
+            android:icon="@mipmap/kdb_bank"
+            android:name="app.ppix.io.mobile.MainActivitykdb_bank"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="KEB Hana"
+            android:exported="true"
+            android:icon="@mipmap/keb_hana"
+            android:name="app.ppix.io.mobile.MainActivitykeb_hana"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="Luso Brasileiro"
+            android:exported="true"
+            android:icon="@mipmap/luso_brasileiro"
+            android:name="app.ppix.io.mobile.MainActivityluso_brasileiro"
             android:enabled="false"
             android:targetActivity=".MainActivity">
             <intent-filter>

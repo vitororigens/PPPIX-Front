@@ -130,7 +130,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
-         <activity-alias
+                 <activity-alias
             android:label="Agibank"
             android:exported="true"
             android:icon="@mipmap/agibank"
@@ -142,7 +142,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
-        <activity-alias
+                 <activity-alias
             android:label="Alfa"
             android:exported="true"
             android:icon="@mipmap/alfa"
@@ -154,9 +154,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
-        <activity-alias
+                 <activity-alias
             android:label="Arbi"
-            android:exported="Arue"
+            android:exported="true"
             android:icon="@mipmap/arbi"
             android:name="app.ppix.io.mobile.MainActivityarbi"
             android:enabled="false"

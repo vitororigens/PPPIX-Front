@@ -200,7 +200,7 @@
         </activity-alias>
 
         <activity-alias
-            android:label="Banco Amazona"
+            android:label="Banco Amazonia"
             android:exported="true"
             android:icon="@mipmap/banco_amazonia"
             android:name="app.ppix.io.mobile.MainActivitybanco_amazonia"
@@ -385,7 +385,7 @@
             android:label="BTG Pactual"
             android:exported="true"
             android:icon="@mipmap/btg_pactual"
-            android:name="app.ppix.io.mobile.MainActivitybanrisul"
+            android:name="app.ppix.io.mobile.MainActivitybtg_pactual"
             android:enabled="false"
             android:targetActivity=".MainActivity">
             <intent-filter>
@@ -575,6 +575,228 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
+
+        <activity-alias
+            android:label="Mercado Pago"
+            android:exported="true"
+            android:icon="@mipmap/mercado_pago"
+            android:name="app.ppix.io.mobile.MainActivitymercado_pago"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="Mercantil do Brasil"
+            android:exported="true"
+            android:icon="@mipmap/mercantil_do_brasil"
+            android:name="app.ppix.io.mobile.MainActivitymercantil_do_brasil"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="Mizuho"
+            android:exported="true"
+            android:icon="@mipmap/mizuho"
+            android:name="app.ppix.io.mobile.MainActivitymizuho"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="Morgan Stanley"
+            android:exported="true"
+            android:icon="@mipmap/morgan_stanley"
+            android:name="app.ppix.io.mobile.MainActivitymorgan_stanley"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="MUFG"
+            android:exported="true"
+            android:icon="@mipmap/mufg"
+            android:name="app.ppix.io.mobile.MainActivitymufg"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="Neon"
+            android:exported="true"
+            android:icon="@mipmap/neon"
+            android:name="app.ppix.io.mobile.MainActivityneon"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="Next"
+            android:exported="true"
+            android:icon="@mipmap/next"
+            android:name="app.ppix.io.mobile.MainActivitynext"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="PagBank"
+            android:exported="true"
+            android:icon="@mipmap/pagbank"
+            android:name="app.ppix.io.mobile.MainActivitypagbank"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="PICPAY"
+            android:exported="true"
+            android:icon="@mipmap/picpay"
+            android:name="app.ppix.io.mobile.MainActivitypicpay"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="Safra"
+            android:exported="true"
+            android:icon="@mipmap/safra"
+            android:name="app.ppix.io.mobile.MainActivitysafra"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="Santander"
+            android:exported="true"
+            android:icon="@mipmap/santander"
+            android:name="app.ppix.io.mobile.MainActivitysantander"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="Sicredi"
+            android:exported="true"
+            android:icon="@mipmap/sicredi"
+            android:name="app.ppix.io.mobile.MainActivitysicredi"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="Stone Pagamentos"
+            android:exported="true"
+            android:icon="@mipmap/stone_pagamentos"
+            android:name="app.ppix.io.mobile.MainActivitystone_pagamentos"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="Superdigital"
+            android:exported="true"
+            android:icon="@mipmap/superdigital"
+            android:name="app.ppix.io.mobile.MainActivitysuperdigital"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="Todos os Bancos V17"
+            android:exported="true"
+            android:icon="@mipmap/todos_os_bancos_v17"
+            android:name="app.ppix.io.mobile.MainActivitytodos_os_bancos_v17"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="Topazio"
+            android:exported="true"
+            android:icon="@mipmap/topazio"
+            android:name="app.ppix.io.mobile.MainActivitytopazio"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:label="WillBank"
+            android:exported="true"
+            android:icon="@mipmap/willbank"
+            android:name="app.ppix.io.mobile.MainActivitywillbank"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
 
         <activity
             android:name="com.facebook.react.devsupport.DevSettingsActivity"

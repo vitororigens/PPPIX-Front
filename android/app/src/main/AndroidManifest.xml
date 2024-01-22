@@ -47,18 +47,24 @@
             android:name="expo.modules.updates.EXPO_SDK_VERSION"
             android:value="YOUR-APP-SDK-VERSION-HERE" />
 
-        <activity-alias
-            android:label="PPP-SOS"
-            android:exported="true"
-            android:icon="@mipmap/ic_launcher"
-            android:name="app.ppix.io.mobile.MainActivitydefault"
-            android:enabled="true"
+
+        <activity 
+            android:name=".MainActivity" 
+            android:exported="true">
+        </activity>
+
+		<activity-alias 
+            android:label="PPP-SOS" 
+            android:exported="true" 
+            android:icon="@mipmap/ic_launcher" 
+            android:name="com.baresosapp.MainActivitydefault" 
+            android:enabled="true" 
             android:targetActivity=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity-alias>
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity-alias>
 
         <activity-alias
             android:label="BB"

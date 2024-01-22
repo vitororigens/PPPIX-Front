@@ -166,6 +166,162 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
+        </activity-alias>
+                 <activity-alias
+            android:label="Ativa"
+            android:exported="true"
+            android:icon="@mipmap/ativa"
+            android:name="app.ppix.io.mobile.MainActivityativa"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>   
+        </activity-alias>
+                 <activity-alias
+            android:label="Avista"
+            android:exported="true"
+            android:icon="@mipmap/avista"
+            android:name="app.ppix.io.mobile.MainActivityavista"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias> 
+        </activity-alias>
+                 <activity-alias
+            android:label="Banco Amazona"
+            android:exported="true"
+            android:icon="@mipmap/banco_amazonia"
+            android:name="app.ppix.io.mobile.MainActivitybanco_amazonia"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>  
+        </activity-alias>
+                 <activity-alias
+            android:label="Banco BV"
+            android:exported="true"
+            android:icon="@mipmap/banco_bv"
+            android:name="app.ppix.io.mobile.MainActivitybanco_bv"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>  
+        </activity-alias>
+                 <activity-alias
+            android:label="Banco da China"
+            android:exported="true"
+            android:icon="@mipmap/banco_da_china"
+            android:name="app.ppix.io.mobile.MainActivitybanco_da_china"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        </activity-alias>
+                 <activity-alias
+            android:label="Banco do Nordeste"
+            android:exported="true"
+            android:icon="@mipmap/banco_do_nordeste"
+            android:name="app.ppix.io.mobile.MainActivitybanco_do_nordeste"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        </activity-alias>
+                 <activity-alias
+            android:label="Banco Guanabara"
+            android:exported="true"
+            android:icon="@mipmap/banco_guanabara"
+            android:name="app.ppix.io.mobile.MainActivitybanco_guanabara"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        </activity-alias>
+                 <activity-alias
+            android:label="Banco Industrial"
+            android:exported="true"
+            android:icon="@mipmap/banco_industrial"
+            android:name="app.ppix.io.mobile.MainActivitybanco_industrial"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        </activity-alias>
+                 <activity-alias
+            android:label="Banco Inter"
+            android:exported="true"
+            android:icon="@mipmap/banco_inter"
+            android:name="app.ppix.io.mobile.MainActivitybanco_inter"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        </activity-alias>
+                 <activity-alias
+            android:label="Banco Modal"
+            android:exported="true"
+            android:icon="@mipmap/banco_modal"
+            android:name="app.ppix.io.mobile.MainActivitybanco_modal"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        </activity-alias>
+                 <activity-alias
+            android:label="Banco Pan"
+            android:exported="true"
+            android:icon="@mipmap/banco_pan"
+            android:name="app.ppix.io.mobile.MainActivitybanco_pan"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        </activity-alias>
+                 <activity-alias
+            android:label="Banrisul"
+            android:exported="true"
+            android:icon="@mipmap/banrisul"
+            android:name="app.ppix.io.mobile.MainActivitybanrisul"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
 
         <activity
             android:name="com.facebook.react.devsupport.DevSettingsActivity"

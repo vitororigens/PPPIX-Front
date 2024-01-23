@@ -21,7 +21,7 @@ import AlertProvider from "./src/contexts/AlertContext"
 
 import { NavigationContainer } from "@react-navigation/native";
 import axios from 'axios'
-import { TabsApp } from "./src/routes/AppRoutes";
+
 EStyleSheet.build({});
 
 export default function App() {
@@ -31,33 +31,32 @@ export default function App() {
     Montserrat_700Bold,
   });
 
-  axios.interceptors.request.use((config:any ) => {
+  axios.interceptors.request.use((config: any) => {
     // add token to request headers
     config.headers['Authorization'] = `Bearer 9|M3nVur2gF9gcHup8UXueM9Ojjc912dVYAEL78gXn`;
     return config;
   });
-  
+
 
   return (
     <NavigationContainer>
       <NativeBaseProvider theme={THEME}>
         <AuthProvider>
           <AxiosProvider>
-              <LocationProvider>
-                <AlertProvider>
-                  <ContactsProvider>
-                    <SecurityProvider>
-                      <StatusBar
-                        barStyle="light-content"
-                        backgroundColor="transparent"
-                        translucent
-                      />
-
-                      {!fontsLoaded ? <Loading /> : <TabsApp />}
-                    </SecurityProvider>
-                  </ContactsProvider>
-                </AlertProvider>
-              </LocationProvider>
+            <LocationProvider>
+              <AlertProvider>
+                <ContactsProvider>
+                  <SecurityProvider>
+                    <StatusBar
+                      barStyle="light-content"
+                      backgroundColor="transparent"
+                      translucent
+                    />
+                    {!fontsLoaded ? <Loading /> : <Router />}
+                  </SecurityProvider>
+                </ContactsProvider>
+              </AlertProvider>
+            </LocationProvider>
           </AxiosProvider>
         </AuthProvider>
       </NativeBaseProvider>

@@ -2,7 +2,7 @@ import axios, { AxiosInterceptorOptions, AxiosProxyConfig, AxiosRequestConfig } 
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const api = axios.create({
-  baseURL: "https://ppp.app.br/api",
+  baseURL: "http://pppix.app.br",
   headers: {
     'accept': 'application/json'
   }

@@ -5,8 +5,12 @@
     "version": "2.0.7",
     "assetBundlePatterns": [
       "**/*"
-    ]
-    
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "c371c422-14f4-427c-a6ab-c5e502d2dbf1"
+      }
+    }
   },
   "name": "PPP-SOS",
   "displayName": "PPP-SOS"

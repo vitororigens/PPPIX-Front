@@ -54,7 +54,7 @@
         </activity>
 
 		<activity-alias 
-            android:label="PPP-SOS" 
+            android:label="PPPIX" 
             android:exported="true" 
             android:icon="@mipmap/ic_launcher" 
             android:name="com.baresosapp.MainActivitydefault" 

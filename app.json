@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "PPP-SOS",
+    "name": "PPPIX",
     "slug": "bare-sos-app",
     "version": "2.0.7",
     "assetBundlePatterns": [
@@ -12,6 +12,6 @@
       }
     }
   },
-  "name": "PPP-SOS",
-  "displayName": "PPP-SOS"
+  "name": "PPPIX",
+  "displayName": "PPPIX"
 }

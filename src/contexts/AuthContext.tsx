@@ -3,7 +3,6 @@ import { AuthServices } from "../services/AuthServices";
 import { useToast } from "native-base";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { AppState } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 import axios, { AxiosError } from "axios";
 import api from "../config/Axios";
 
@@ -27,7 +26,11 @@ export interface AuthData {
     token: string,
     user: {
       email: string,
-      phone: string
+      phone: string,
+      passwordApp: string,
+      passwordEmergecy: string,
+      passwordBank: string,
+
     }
 }
 
@@ -50,7 +53,7 @@ export const AuthContext = createContext<AuthContextDataProps>(
 );
 
 function AuthProvider({ children }: AuthProviderProps) {
-  const [authData, setAuthData] = useState<AuthData >();
+  const [authData, setAuthData] = useState<AuthData | null>(null);
   const [passwords, setPassword] = useState([
     '',
     '',
@@ -136,25 +139,25 @@ function AuthProvider({ children }: AuthProviderProps) {
   async function signUp({ email, password, phone }: SignupData) {
     return new Promise<void>((resolve, reject) => {
       AuthServices.signUp(email, password, phone)
-      .then(() => {
-        resolve()
-        toast.show({
-          title: "Cadastro realizado com sucessoddd!",
-          placement: "top",
-          duration: 3000,
-          bgColor: "green.500",
+        .then(() => {
+          resolve();
+          toast.show({
+            title: "Cadastro realizado com sucesso!",
+            placement: "top",
+            duration: 3000,
+            bgColor: "green.500",
+          });
+        })
+        .catch((error: AxiosError<{ errors?: string }>) => {
+          reject();
+          toast.show({
+            title: error.response?.data?.errors || "Erro desconhecido",
+            placement: "top",
+            duration: 3000,
+            bgColor: "red.500",
+          });
         });
-      })
-      .catch((error:AxiosError) => {
-        reject()
-        toast.show({
-          title: error.response?.data?.errors,
-          placement: "top",
-          duration: 3000,
-          bgColor: "red.500",
-        });
-      })
-    })
+    });
   }
 
   async function signOut() {

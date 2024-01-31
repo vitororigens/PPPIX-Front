@@ -2,9 +2,8 @@ import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import EStyleSheet from "react-native-extended-stylesheet";
 import { useNavigation } from "@react-navigation/native";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useState, useEffect } from "react";
-import { AxiosError, AxiosResponse } from "axios";
+import { AxiosResponse } from "axios";
 import { useToast } from "native-base";
 import { useAxios } from '../hooks/useAxios'
 

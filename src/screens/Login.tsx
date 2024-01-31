@@ -11,7 +11,6 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useAuth } from "../hooks/useAuth";
-import axios from "axios";
 import PPP from "../assets/logoPPP.svg";
 import { useTogglePasswordVisibility } from "../components/useTogglePasswordVisibility";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";

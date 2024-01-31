@@ -15,7 +15,7 @@ import { ButtonIcon } from "./ButtonIcon";
 import { Input } from "./Input";
 
 interface Props {
-  title: string;
+  title?: string;
   showBackButton?: boolean;
   showShareButton?: boolean;
   description?: string;
@@ -25,8 +25,8 @@ interface Props {
   type?: "primary" | "secondary";
   onShare?: () => void;
   onCreateGroup?: () => void;
-  label: string;
-  selectedMode: string;
+  label?: string;
+  selectedMode?: string;
 }
 
 export function Header({

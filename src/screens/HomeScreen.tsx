@@ -8,11 +8,9 @@ import Ion from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
 import { SignOut } from "phosphor-react-native";
 import { useAuth } from "../hooks/useAuth";
-import { useSecurity } from "../hooks/useSecurity";
 import { useAxios } from '../hooks/useAxios';
 import React, { useState, useEffect } from 'react' 
 import { AxiosResponse } from "axios";
-import { useFocusEffect } from '@react-navigation/native';
 
 
 export function HomeScreen() {
@@ -20,7 +18,6 @@ export function HomeScreen() {
   const { api, load } = useAxios()
 
   const { signOut, authData } = useAuth();
-  const { setSecurityMode } = useSecurity();
 
   const [ data, setData ] = useState({
     groupNumbers: 0,

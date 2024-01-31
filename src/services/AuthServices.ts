@@ -1,4 +1,3 @@
-import { AxiosError, AxiosResponse } from "axios";
 import api from "../config/Axios";
 import { AuthData } from "../contexts/AuthContext";
 

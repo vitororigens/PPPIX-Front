@@ -11,12 +11,12 @@ import {
 } from "native-base";
 import { TouchableOpacity } from 'react-native'
 import React, {
-  Fragment,
   useCallback,
   useEffect,
   useMemo,
   useRef,
   useState,
+  SetStateAction
 } from "react";
 import { FlashList } from "@shopify/flash-list";
 import { Header } from "../components/Header";
@@ -34,7 +34,6 @@ import { AxiosResponse } from "axios";
 import { useAxios } from '../hooks/useAxios'
 import Feather from "react-native-vector-icons/Feather";
 
-
 export function Contacts() {
   const { allContacts, statusServiceContacts } = useContacts();
 
@@ -46,14 +45,14 @@ export function Contacts() {
   const [loading, setLoading] = useState(true);
   const [contacts, setContacts] = useState<ContactsExpo.Contact[]>([]);
   const [ validContact, setValidContact ] = useState([])
-  const [ groupContact, setGroupContact ] = useState([])
+  const [groupContact, setGroupContact] = useState<{ phone: string }[]>([]);
   const [contactsToSearch, setContactsToSearch] = useState<
     ContactsExpo.Contact[]
   >([]);
   const [selectedContacts, setSelectedContacts] = useState<any[]>([]);
   console.log(selectedContacts);
   const [selectingVisible, setSelectingVisible] = useState(false);
-  const [ select, setSelect ] = useState()
+  const [select, setSelect] = useState<undefined | SetStateAction<string>>(undefined);
   const toast = useToast();
 
   const handleSelectContact = useCallback((contact: any) => {
@@ -117,7 +116,7 @@ export function Contacts() {
     ]);
     if (allContacts.length > 0) {
       api.post('group/users')
-      .then((response) => {
+      .then((response: AxiosResponse) => {
         setContacts(allContacts)
         setGroupContact(response.data.group)
         setValidContact(response.data.numbers)

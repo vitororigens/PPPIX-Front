@@ -3,13 +3,12 @@ import React from "react";
 import { Text, View, TouchableOpacity } from "react-native";
 import IconFont from "react-native-vector-icons/Feather";
 import EStyleSheet from "react-native-extended-stylesheet";
-import IconAnt from "react-native-vector-icons/AntDesign";
 
 type AccordionContentProps = {
-  name: string;
-  icon: string;
-  id: string;
-  deleteHandle: () => void
+  name?: string;
+  icon?: string;
+  id?: string;
+  deleteHandle?: () => void
 };
 
 export function AccordionContact({ name, icon, id, deleteHandle }: AccordionContentProps) {

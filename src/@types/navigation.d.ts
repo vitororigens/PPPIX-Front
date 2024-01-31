@@ -12,9 +12,13 @@ export declare global {
       Group: undefined;
       Apps: undefined;
       Notifications: undefined;
+      GroupScreen: undefined;
+      Security:undefined;
+      CarsScreen: undefined;
       ForgotPassword: undefined;
       signUp: undefined;
       signIn: undefined;
+      Groups: undefined;
       VerifyPassword: {
         email: string;
       };

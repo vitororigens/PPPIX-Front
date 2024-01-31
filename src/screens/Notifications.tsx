@@ -1,21 +1,43 @@
-import { Text, Touchable, TouchableOpacity, View, ScrollView } from "react-native";
+import { Text, TouchableOpacity, View, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import EStyleSheet from "react-native-extended-stylesheet";
 import Ion from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import Notification from "../components/Notification";
-import AccordionCar from "../components/AccordionCar";
 import IconFont from "react-native-vector-icons/FontAwesome5";
-import IconFeather from "react-native-vector-icons/Feather";
 import NofityCars from "../components/NotifyCars";
-import { Location } from "../components/Location";
-import { useState, useEffect } from 'react'
+import { useState, useEffect, ReactNode } from 'react'
 import { useAxios } from '../hooks/useAxios'
 import { useAuth } from '../hooks/useAuth'
 import { AxiosResponse } from "axios";
-import MapView, { PROVIDER_GOOGLE, Marker, MarkerAnimated } from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import {Select, useToast} from 'native-base'
+
+interface AlertData {
+  id: string;
+  email: string;
+  status: number;
+  car: {
+    brand: string;
+    licensePlate: string;
+  };
+  lat: string;
+  log: string;
+  finished_lat: string;
+  finished_log: string;
+}
+
+// Defina a interface para representar a estrutura do objeto retornado pela API
+interface ApiResponse {
+  alerts: AlertData[];
+}
+
+// Defina a propriedade `children` como ReactNode se estiver sendo usada
+interface NotificationProps {
+  icon: string;
+  name: string;
+  children?: ReactNode;
+}
 
 export function Notifications() {
   const navigation = useNavigation();
@@ -23,7 +45,7 @@ export function Notifications() {
   const { authData } = useAuth()
   const toast = useToast();
 
-  const [alerts, setAlerts] = useState([]);
+  const [alerts, setAlerts] = useState<AlertData[]>([]);
   const [select, setSelect] = useState('alert');
 
   function handleFinishSos(alert_id:string){
@@ -56,9 +78,9 @@ export function Notifications() {
 
   function updateAlerts() {
     api.get('alert')
-    .then((response:AxiosResponse) => {
-      setAlerts(response.data.alerts)
-    })
+    .then((response: AxiosResponse<ApiResponse>) => {
+      setAlerts(response.data.alerts);
+    });
   }
   useEffect(() => {
     updateAlerts()
@@ -113,8 +135,8 @@ export function Notifications() {
           }}
         >
           
-            {alerts?.map((alertData) => {
-                 return ( ( select == 'myAlert'  && alertData.email == authData?.email) || (select == 'alert'  && alertData.email != authData?.email) ) && (
+          {alerts?.map((alertData: AlertData) => {
+                 return ( ( select == 'myAlert'  && alertData.email == authData?.user.email) || (select == 'alert'  && alertData.email != authData?.user.email) ) && (
                   <View style={styles.notifyBox}>
                             <View style={styles.notifyContent}>
                               <View style={{

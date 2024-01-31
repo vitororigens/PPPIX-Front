@@ -1,20 +1,14 @@
-import { Box, FlatList, Flex, Heading, Switch, Text, Toast } from "native-base";
-import React, { useCallback, useEffect } from "react";
+import { Box, FlatList, Flex, Switch, Text, Toast } from "native-base";
+import React, { useCallback } from "react";
 import { Header } from "../components/Header";
 import { changeIcon, getIcon } from "react-native-change-icon";
 import { useFocusEffect } from "@react-navigation/native";
 import { Platform, AppState } from "react-native";
-import { dataApps } from "../mocks/dataApps";
+import { IDataAppsProps, dataApps } from "../mocks/dataApps";
 
 interface IAppItemProps {
   index: number;
-  item: {
-    nameApp: string;
-    colorIcon: string;
-    icon: React.ReactNode;
-    iconName: string;
-    lenghtApp: string;
-  };
+  item: IDataAppsProps
 }
 
 export default function Security() {
@@ -29,7 +23,7 @@ export default function Security() {
     setAppState(nextAppState);
   };
 
-  const handleChangeLocation = async (value, props) => {
+  const handleChangeLocation = async (value: boolean, props: IAppItemProps) => {
     console.log(value)
 
     if (value) {
@@ -100,7 +94,7 @@ export default function Security() {
               {props.item.nameApp}
             </Text>
             <Text fontFamily={"body"} color={"gray.200"}>
-              {props.item.lenghtApp} mb
+              {props.item.lengthApp} mb
             </Text>
           </Box>
         </Flex>

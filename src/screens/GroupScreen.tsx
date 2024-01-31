@@ -13,24 +13,35 @@ import { useToast, ScrollView as Scroll, Modal, FormControl, Input } from "nativ
 import { AxiosResponse } from "axios";
 import {Dimensions} from 'react-native';
 
+type UserData = {
+  email: string;
+  phone: string;
 
+};
+interface GroupData {
+  group_name: string;
+  email: string;
+  phone: string;
+  leader_id: string;
+  users: UserData[];
 
-// const dataArray = [
-//   { title: "First Element", content: "Lorem ipsum dolor sit amet" },
-//   { title: "Second Element", content: "Lorem ipsum dolor sit amet" },
-//   { title: "Third Element", content: "Lorem ipsum dolor sit amet" },
-// ];
+}
+
+interface ResponseData {
+  groups: GroupData[];
+
+}
+
 
 export function GroupScreen() {
   const { api } = useAxios()
   const { authData } = useAuth()
   const toast = useToast();
-  const [groups, setGroups] = useState([]);
+  const [groups, setGroups] = useState<GroupData[]>([]);
   const [editName, setEditName] = useState('');
   const [search, setSearch] = useState('');
   const [modalVisible, setModalVisible] = useState(false);
-  const initialRef = useRef(null);
-  const finalRef = useRef(null);
+
 
 
   function updateGroups() {
@@ -46,7 +57,7 @@ export function GroupScreen() {
   }, [])
 
   function handleEditGroup(email:string, groupIndex:number) {
-    if (authData?.email == email) {
+    if (authData?.user.email == email) {
       setEditName(groups[groupIndex].group_name)
       setModalVisible(true)
     }
@@ -135,7 +146,7 @@ export function GroupScreen() {
           paddingRight: 5,
         }}
       >
-        {groups.map((group:any, index) => {
+        {groups.map((group, index) => {
             if (!group.group_name.toLowerCase().includes(search) && search != '') {
 
             } else {
@@ -165,7 +176,7 @@ export function GroupScreen() {
                   >
                     <ScrollView style={{ maxHeight: "80%" }}>
                       {
-                        (group.email != authData?.email) ?
+                        (group.email != authData?.user.email) ?
                           (
                             <Button
                               w={"full"}
@@ -175,10 +186,10 @@ export function GroupScreen() {
                           )
                           :''
                         }
-                      <AccordionGroup name={(group.email == authData?.email) ? 'Você' : group.email} phone={group.phone} tag='Admin' subTitle="3 contatos" />
+                      <AccordionGroup name={(group.email == authData?.user.email) ? 'Você' : group.email} phone={group.phone} tag='Admin' subTitle="3 contatos" />
                       {group.users.map((user) => {
                         return(
-                          <AccordionGroup name={(user.email == authData?.email) ? 'Você' : user.email} phone={user.phone} tag="Participante" subTitle="3 contatos" />
+                          <AccordionGroup name={(user.email == authData?.user.email) ? 'Você' : user.email} phone={user.phone} tag="Participante" subTitle="3 contatos" />
                         )
                       })}
                     </ScrollView>

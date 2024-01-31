@@ -1,18 +1,16 @@
-import React, { createContext, useEffect, useState, useContext, useRef  } from "react";
+import React, { createContext, useEffect, useState, useContext, useRef } from "react";
 import { AuthContext } from "./AuthContext";
 import { AxiosContext } from "./AxiosContext";
 import { Center, Button, Modal, Text, View } from 'native-base'
 import { AxiosResponse } from "axios";
 import SoundPlayer from 'react-native-sound-player'
-import { useNavigation } from '@react-navigation/native'; 
+import { useNavigation } from '@react-navigation/native';
 import Notification from "../components/Notification";
-import AccordionCar from "../components/AccordionCar";
-import { Location } from "../components/Location";
 import NofityCars from "../components/NotifyCars";
 import EStyleSheet from "react-native-extended-stylesheet";
 import MapView, { PROVIDER_GOOGLE, Marker, MarkerAnimated } from 'react-native-maps';
 import messaging from '@react-native-firebase/messaging';
-import {Linking, TouchableOpacity} from 'react-native'
+import { Linking, TouchableOpacity } from 'react-native'
 import IconFont from "react-native-vector-icons/Feather";
 
 interface AlertInterface {
@@ -33,39 +31,38 @@ function alertProvider({ children }: LocationProviderInterface) {
     const [showModal, setShowModal] = useState(false);
     const [showMap, setShowMap] = useState(false);
     const [active, setActive] = useState(true);
-    const Axios = useContext(AxiosContext) 
+    const Axios = useContext(AxiosContext)
     const navigation = useNavigation();
     const viewRef = useRef();
     const mapViewRef = useRef();
 
-    function handleSendPushToken(token:any) {
+    function handleSendPushToken(token: any) {
         Axios.api.post('alert/update/token', { fcmToken: token })
     }
 
     function handleSosPolice() {
         Axios.api.post('alert/stop', { alert_id: alertData.id })
-        .then(() => {
-            setShowModal(false)
-            setActive(true)
-            Linking.openURL('tel:190')
-            SoundPlayer.stop()
-        })
-    }
-    
-    function handleFinishSos(){
-        Axios.api.post('alert/stop', { alert_id: alertData.id })
-        .then(() => {
-            SoundPlayer.stop()
-            setShowModal(false)
-            setActive(true)
-        })
+            .then(() => {
+                setShowModal(false)
+                setActive(true)
+                Linking.openURL('tel:190')
+                SoundPlayer.stop()
+            })
     }
 
+    function handleFinishSos() {
+        Axios.api.post('alert/stop', { alert_id: alertData.id })
+            .then(() => {
+                SoundPlayer.stop()
+                setShowModal(false)
+                setActive(true)
+            })
+    }
 
     useEffect(() => {
         function updateNotification() {
             Axios.api.get('alert/wait')
-                .then((response:AxiosResponse) => {
+                .then((response: AxiosResponse) => {
                     if (response.data.alerts.length > 0) {
                         if (active) {
                             SoundPlayer.playSoundFile('alerta', 'mp3')
@@ -73,7 +70,7 @@ function alertProvider({ children }: LocationProviderInterface) {
                         setActive(false)
                         setAlertData(response.data.alerts[0])
                         setShowModal(true)
-                        
+
                         if (response.data.alerts[0].lat != '' && response.data.alerts[0].log != '') {
                             setShowMap(true)
                         } else {
@@ -96,20 +93,22 @@ function alertProvider({ children }: LocationProviderInterface) {
                                 duration: 0,
                             }
                         )
-                        
+
                     }
                 })
         }
+
         if (Axios.load) {
-            console.log('alerta procurantdo')
+            console.log('alerta procurando');
             messaging().requestPermission().then(() => {
                 messaging().getToken().then(handleSendPushToken)
             })
 
-            updateNotification()
-            const intervalId = setInterval(() => {
-                updateNotification()
-            }, 5000)
+            updateNotification();
+
+            // Chama o updateNotification periodicamente
+            const intervalId = setInterval(updateNotification, 10000);
+
             return () => {
                 clearInterval(intervalId);
             };

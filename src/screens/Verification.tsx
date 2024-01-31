@@ -1,24 +1,13 @@
-import {
-  Button,
-  Center,
-  Heading,
-  Text,
-  useToast,
-  View,
-  VStack,
-} from "native-base";
-import {ImageBackground} from 'react-native'
+import { Button, useToast, VStack} from "native-base";
 import { CaretRight } from "phosphor-react-native";
 import React from "react";
 import { openApp } from "react-native-send-intent";
 import { Input } from "../components/Input";
 import { useAuth } from "../hooks/useAuth";
 import { useAxios } from "../hooks/useAxios";
-import { useSecurity } from "../hooks/useSecurity";
-import verificationPassSecurity from "../utils/verificationPassSecurity";
 // import verificationPassSecurity from "../utils/verificationPassSecurity";
-import { changeIcon, getIcon } from "react-native-change-icon";
-import Animated, { withSequence, withTiming, useAnimatedStyle } from 'react-native-reanimated' 
+import { getIcon } from "react-native-change-icon";
+import Animated, { withSequence, withTiming, useAnimatedStyle } from 'react-native-reanimated'
 
 export default function Verification() {
   const [password, setPassword] = React.useState("");
@@ -29,7 +18,7 @@ export default function Verification() {
   const handleContinue = async () => {
     setPassword(password.trim())
 
-    if (password == '' ) {
+    if (password == '') {
       toast.show({
         title: "Preencha o campo senha",
         bgColor: "red.500",
@@ -39,42 +28,11 @@ export default function Verification() {
     }
     async function openBank() {
       const response = await getIcon();
-      let packageName;
-    
+      let packageName
       if (response === 'bb') {
         packageName = 'br.com.bb.android';
       } else if (response === 'nubank') {
         packageName = 'com.nu.production';
-      } else if (response === 'morgan_stanley') {
-        packageName = 'com.morganstanley.clientmobile.prod';
-      } else if (response === 'unionbank') {
-        packageName = 'com.unionbank.cmb';
-      } else if (response === 'neon') {
-        packageName = 'br.com.neon';
-      } else if (response === 'next') {
-        packageName = 'br.com.bradesco.next';
-      } else if (response === 'original') {
-        packageName = 'br.com.original.bank';
-      } else if (response === 'uol') {
-        packageName = 'br.com.uol.ps.myaccount';
-      } else if (response === 'picpay') {
-        packageName = 'com.picpay';
-      } else if (response === 'safra') {
-        packageName = 'br.livetouch.safra.net';
-      } else if (response === 'santander') {
-        packageName = 'com.santander.app';
-      } else if (response === 'sicredi') {
-        packageName = 'br.com.sicredimobi.smart';
-      } else if (response === 'stone') {
-        packageName = 'co.stone.banking.mobile.flagship';
-      } else if (response === 'superdigital') {
-        packageName = 'com.superdigital';
-      } else if (response === 'topazio') {
-        packageName = 'stf.topazio.Topazio';
-      } else if (response === 'pagbank') {
-        packageName = 'br.com.meupag';
-      } else if (response === 'z1') {
-        packageName = 'app.z1.mobile';
       } else if (response === 'abc_brasil') {
         packageName = 'br.com.abcbrasil.bancoabcbrasil';
       } else if (response === 'abn_amro') {
@@ -113,7 +71,7 @@ export default function Verification() {
         packageName = 'br.com.bancobmg.bancodigital';
       } else if (response === 'bocom_bbm') {
         packageName = 'br.com.bocombbm.ib';
-      } else if (response === 'bradesco') {
+      }else if (response === 'bradesco') {
         packageName = 'com.bradesco';
       } else if (response === 'bs2') {
         packageName = 'com.bs2.empresas';
@@ -183,33 +141,33 @@ export default function Verification() {
         packageName = 'stf.topazio.Topazio';
       } else if (response === 'willbank') {
         packageName = 'br.com.willbank';
+      } else if (response === 'z1') {
+        packageName = 'app.z1.mobile'
       } else {
         console.log('Pacote não definido para a resposta:', response);
         return;
       }
-    
+
       openApp(packageName, {}).then((isOpened) => {
         console.log(isOpened); // imprima se o aplicativo foi aberto ou não
       });
     }
-    
-    
-    
+
     if (password == authData?.user.passwordBank) {
       openBank()
-    } else if (password == authData?.user.passwordApp ) {
-      
+    } else if (password == authData?.user.passwordApp) {
+
       setSecurityMode(false);
-      
+
       setPassword("");
     } else if (password == authData?.user.passwordEmergecy) {
       api.post('alert/create')
-      .then(()=> {
-        openBank()
-      }) 
-      
+        .then(() => {
+          openBank()
+        })
+
     } else {
-    
+
       toast.show({
         title: "Senha incorreta",
         bgColor: "red.500",
@@ -219,22 +177,22 @@ export default function Verification() {
     }
   };
 
-    const animatedStyle = useAnimatedStyle(() => {
-      return {
-        opacity: withSequence(withTiming(0), withTiming(1, {duration: 500}))
-      }
-    })
+  const animatedStyle = useAnimatedStyle(() => {
+    return {
+      opacity: withSequence(withTiming(0), withTiming(1, { duration: 500 }))
+    }
+  })
 
   return (
     <VStack flex={1} safeArea px={5} justifyContent={"center"} >
-      
+
       <Animated.View
         style={[{
           flexDirection: 'row',
           width: '100%'
         },
-        animatedStyle
-      ]}
+          animatedStyle
+        ]}
       >
         <Input
           mt={5}
@@ -245,21 +203,21 @@ export default function Verification() {
           w="100%"
         />
         <Button
-            onPress={handleContinue}
-            mt={5}
-            bg={"gray.700"}
-            _text={{ color: "white" }}
-            w={50}
-            h={50}
-            rounded="full"
-            position="absolute"
-            right={2}
-            top={2}
-          >
-            <CaretRight size={32} weight="regular" color="white" />
-          </Button>
+          onPress={handleContinue}
+          mt={5}
+          bg={"gray.700"}
+          _text={{ color: "white" }}
+          w={50}
+          h={50}
+          rounded="full"
+          position="absolute"
+          right={2}
+          top={2}
+        >
+          <CaretRight size={32} weight="regular" color="white" />
+        </Button>
       </Animated.View>
-      
+
     </VStack>
   );
 }

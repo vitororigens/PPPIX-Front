@@ -55,8 +55,9 @@ import Superdigital from "../assets/Bancos/Superdigital.svg";
 import V17 from "../assets/Bancos/Todos os Bancos V17.svg";
 import Topazio from "../assets/Bancos/Topazio.svg";
 import WillBank from "../assets/Bancos/WillBank.svg";
+import Z1 from "../assets/Bancos/Z1.svg"
 
-interface IDataAppsProps {
+export interface IDataAppsProps {
   nameApp: string;
   colorIcon: string;
   icon: React.ReactNode;
@@ -463,4 +464,12 @@ export const dataApps: IDataAppsProps[] = [
     lengthApp: "252",
     nameApp: "WillBank",
     colorIcon: "green",
-  },]
+  },
+  {
+    icon: <Z1 width={40} height={40} />,
+    iconName: "z1",
+    lengthApp: "252",
+    nameApp: "Z1",
+    colorIcon: "green",
+  },
+]

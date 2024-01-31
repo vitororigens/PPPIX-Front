@@ -1,5 +1,5 @@
-import React, { createContext, useEffect, useState, useContext, ReactDOM } from "react";
-import axios, { AxiosAdapter } from 'axios'
+import React, { createContext, useEffect, useState, useContext} from "react";
+import axios, { Axios, AxiosAdapter } from 'axios'
 import { AuthContext } from "./AuthContext";
 
 interface AxiosProvider{
@@ -7,7 +7,7 @@ interface AxiosProvider{
 }
 
 interface AxiosInterface {
-  api: AxiosAdapter,
+  api: Axios,
   apiContext: () => AxiosAdapter
   load: boolean
 }
@@ -20,12 +20,12 @@ function axiosProvider({ children }: AxiosProvider) {
     const [load, setLoad] = useState(false)
     const Auth = useContext(AuthContext) 
     const api = axios.create({
-        baseURL: "http://15.228.224.16/api"
+        baseURL: "https://backend.pppix.app.br/api"
     });
 
     const apiContext = () => {
       let returnAxios = axios.create({
-                    baseURL: "http://15.228.224.16/api",
+                    baseURL: "https://backend.pppix.app.br/api",
                     headers: {
                         'accept': 'application/json'
                     }
@@ -41,7 +41,7 @@ function axiosProvider({ children }: AxiosProvider) {
 
     api.interceptors.request.use( (config:any ) => {
         // add token to request headers
-        config.headers['Authorization'] = `Bearer ${Auth.authData.token}`;
+        config.headers['Authorization'] = `Bearer ${Auth.authData?.token}`;
         return config;
     });
     useEffect(() => {

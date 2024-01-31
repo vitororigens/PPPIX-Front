@@ -72,7 +72,7 @@ export default function Person() {
                         Email
                     </Text>
                     <Text fontFamily={"body"} color={"white"}>
-                        { authData?.email }
+                        { authData?.user.email }
                     </Text>
                 </Box>
                 </Flex>
@@ -105,7 +105,7 @@ export default function Person() {
                         Telefone
                     </Text>
                     <Text fontFamily={"body"} color={"white"}>
-                        { authData?.phone }
+                        { authData?.user.phone }
                     </Text>
                 </Box>
                 </Flex>

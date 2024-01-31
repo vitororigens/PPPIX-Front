@@ -5,7 +5,12 @@
     "version": "2.0.7",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "a15d23d8-dfc9-41ed-b2b6-e90dda622690"
+      }
+    }
   },
   "name": "PPPIX",
   "displayName": "PPPIX"

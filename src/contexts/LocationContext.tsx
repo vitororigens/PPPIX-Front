@@ -39,7 +39,7 @@ function locationProvider({ children }: LocationProviderInterface) {
                             setTimeOut(); 
                             console.log('axios error') 
                         })
-                    } , () => { setTimeOut(); console.log('gps error') });
+                    } , () => { setTimeOut(); });
                 }, 4000);
             }
             setTimeOut()

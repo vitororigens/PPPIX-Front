@@ -39,7 +39,7 @@ export function CarsScreen() {
     api.get('car')
     .then(async (response:AxiosResponse) => {
       setCars(response.data.cars)
-      setSelectedCar(String(authData?.user.car_id))
+      setSelectedCar(String(authData?.car_id))
     })
   }
   useEffect(() => {
@@ -72,7 +72,7 @@ export function CarsScreen() {
   async function handleSaveCar() {
     api.post('user/change/car', { car_id: selectedCar})
     .then(() => {
-      setAuthData({ ...authData, user:{ ...authData?.user, car_id: selectedCar } })
+      setAuthData({ ...authData, user:{ ...authData, car_id: selectedCar } })
       toast.show({
         title: "Veiculo selecionado com sucesso!!",
         placement: "top",
@@ -116,14 +116,23 @@ export function CarsScreen() {
             }}
           >
             <Radio.Group name="myRadioGroup" accessibilityLabel="favorite number" value={selectedCar} onChange={nextValue => {
-              setSelectedCar(nextValue);
-            }}>
-            { cars.map((car:carType) => {
-              if (search == '' || (car.licensePlate.search(search) != -1)) {
-                return (<AccordionContact deleteHandle={() => handleDeleteCar(car.id)} name={`${(car.brand.length > 10) ? car.brand.substr(0, 10) : car.brand} - ${(car.licensePlate.length > 5) ? car.licensePlate.substr(0, 5) : car.licensePlate} `} icon={""}  id={`${car.id}`}  />)
-              }
-            }) }
-            </Radio.Group>
+    setSelectedCar(nextValue);
+  }}>
+    {cars.map((car: carType) => {
+      if (search === '' || car.licensePlate.includes(search)) {
+        return (
+          <AccordionContact
+       
+            deleteHandle={() => handleDeleteCar(`${car.id}`)}
+            name={`${(car.brand.length > 10) ? car.brand.substr(0, 10) : car.brand} - ${(car.licensePlate.length > 7) ? car.licensePlate.substr(0, 5) : car.licensePlate} `}
+            icon={""}
+            id={`${car.id}`}
+          />
+        );
+      }
+      return null; 
+    })}
+  </Radio.Group>
           </ScrollView>
         </View>
       </View>

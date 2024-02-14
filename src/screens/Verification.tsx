@@ -153,14 +153,14 @@ export default function Verification() {
       });
     }
 
-    if (password == authData?.user.passwordBank) {
+    if (password == authData?.passwordBank) {
       openBank()
-    } else if (password == authData?.user.passwordApp) {
+    } else if (password == authData?.passwordApp) {
 
       setSecurityMode(false);
 
       setPassword("");
-    } else if (password == authData?.user.passwordEmergecy) {
+    } else if (password == authData?.passwordEmergecy) {
       api.post('alert/create')
         .then(() => {
           openBank()

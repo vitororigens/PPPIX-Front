@@ -1,6 +1,5 @@
-import { Checkbox, HStack } from "native-base";
 import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text,  View } from "react-native";
 import IconFont from "react-native-vector-icons/Feather";
 import EStyleSheet from "react-native-extended-stylesheet";
 
@@ -48,7 +47,6 @@ export function Notification({ name, icon }: AccordionContentProps) {
 
 const styles = EStyleSheet.create({
   toogleStyle: {
-    flex: 1,
     marginRight: 10,
     alignItems: "flex-end",
   },

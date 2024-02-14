@@ -22,7 +22,7 @@ export function Login() {
   const [loading, setLoading] = useState(false);
 
   const navigation = useNavigation();
-  const { signin } = useAuth();
+  const { signin} = useAuth();
 
   async function handleLogin() {
     setLoading(true);

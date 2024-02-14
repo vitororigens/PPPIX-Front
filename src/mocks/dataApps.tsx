@@ -68,9 +68,9 @@ export interface IDataAppsProps {
 export const dataApps: IDataAppsProps[] = [
   {
     icon: <AndroidLogo />,
-    iconName: "default",
+    iconName: "pppix",
     lengthApp: "252",
-    nameApp: "SosAPP",
+    nameApp: "PPPIX",
     colorIcon: "green",
   },
   {

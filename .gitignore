@@ -54,3 +54,10 @@ buck-out/
 .expo/
 web-build/
 dist/
+
+# executionHistory
+android/.gradle/*/executionHistory/executionHistory.bin
+
+# node-modules
+node_modules/
+

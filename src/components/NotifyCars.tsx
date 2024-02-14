@@ -8,9 +8,11 @@ type AccordionContentProps = {
   name: string;
   subTitle: string;
   icon: string;
+  cor: string;
+  marca: string;
 };
 
-export function NofityCars({ name, icon, subTitle }: AccordionContentProps) {
+export function NofityCars({ name, icon, subTitle, cor, marca }: AccordionContentProps) {
   return (
     <View
       style={{
@@ -44,6 +46,26 @@ export function NofityCars({ name, icon, subTitle }: AccordionContentProps) {
             }}
           >
             {subTitle}
+          </Text>
+          <Text
+            style={{
+              color: "black",
+              fontSize: 12,
+              marginTop: 3,
+              marginLeft: 5,
+            }}
+          >
+            {cor}
+          </Text>
+          <Text
+            style={{
+              color: "black",
+              fontSize: 12,
+              marginTop: 3,
+              marginLeft: 5,
+            }}
+          >
+            {marca}
           </Text>
         </View>
       </View>

@@ -1,17 +1,13 @@
 import React, { createContext, useEffect, useState, useContext, useRef } from "react";
-import { AuthContext } from "./AuthContext";
 import { AxiosContext } from "./AxiosContext";
-import { Center, Button, Modal, Text, View } from 'native-base'
+import { Center, Modal} from 'native-base'
 import { AxiosResponse } from "axios";
 import SoundPlayer from 'react-native-sound-player'
 import { useNavigation } from '@react-navigation/native';
-import Notification from "../components/Notification";
-import NofityCars from "../components/NotifyCars";
-import EStyleSheet from "react-native-extended-stylesheet";
-import MapView, { PROVIDER_GOOGLE, Marker, MarkerAnimated } from 'react-native-maps';
 import messaging from '@react-native-firebase/messaging';
-import { Linking, TouchableOpacity } from 'react-native'
-import IconFont from "react-native-vector-icons/Feather";
+import { Linking} from 'react-native'
+
+import { AlertSos } from "../components/AlertSos";
 
 interface AlertInterface {
 }
@@ -26,7 +22,16 @@ export const AlertContext = createContext<AlertInterface>(
 
 function alertProvider({ children }: LocationProviderInterface) {
     const [alertData, setAlertData] = useState({
-        email: ''
+        email: '',
+        lat: '',
+        log: '',
+        id:'',
+        car: {
+            brand: '',
+            licensePlate: '',
+            color: '',
+            model:'',
+        }
     });
     const [showModal, setShowModal] = useState(false);
     const [showMap, setShowMap] = useState(false);
@@ -70,7 +75,6 @@ function alertProvider({ children }: LocationProviderInterface) {
                         setActive(false)
                         setAlertData(response.data.alerts[0])
                         setShowModal(true)
-
                         if (response.data.alerts[0].lat != '' && response.data.alerts[0].log != '') {
                             setShowMap(true)
                         } else {
@@ -105,8 +109,6 @@ function alertProvider({ children }: LocationProviderInterface) {
             })
 
             updateNotification();
-
-            // Chama o updateNotification periodicamente
             const intervalId = setInterval(updateNotification, 10000);
 
             return () => {
@@ -117,157 +119,26 @@ function alertProvider({ children }: LocationProviderInterface) {
 
     return (
         <AlertContext.Provider
-          value={{
-          }}
+            value={{
+            }}
         >
             <Center>
-                <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
-                    <Modal.Content maxWidth="400px">
-                    <View style={styles.notifyBox}>
-                            
-                            <View style={styles.notifyContent}>
-                                <View style={{alignItems: 'flex-end', right: 20, position: 'absolute', top: 35}}>
-                                    <TouchableOpacity onPress={handleFinishSos}>
-                                        {/* {" "} */}
-                                        <IconFont name={"x"} size={25} color={"black"} />
-                                    </TouchableOpacity>
-                                </View>
-                            <Notification icon="" name={ alertData?.email.substring(0, 5) + '....' } />
-                            <View
-                                style={{
-                                paddingHorizontal: 25,
-                                marginTop: 10,
-                                }}
-                            >
-                                <Text
-                                style={{
-                                    fontSize: 18,
-                                }}
-                                >
-                                Dados:
-                                </Text>
-                            </View>
-                            <NofityCars icon="car" name={alertData?.car?.brand} subTitle={alertData?.car?.licensePlate} />
-
-                            <View
-                                style={{
-                                paddingHorizontal: 25,
-                                flexDirection: "column",
-                                }}
-                            >
-                                <Text
-                                style={{
-                                    fontSize: 18,
-                                    marginTop: 10,
-                                }}
-                                >
-                                Localização:
-                                </Text>
-
-                                <View
-                                style={{
-                                    marginTop: 3,
-                                }}
-                                >
-                                    {(!showMap) ? (
-                                        <Text>Carregando....</Text>
-                                    ): (
-                                        <MapView.Animated
-                                            provider={PROVIDER_GOOGLE} // remove if not using Google Maps
-                                            style={styles.map}
-                                            ref={mapViewRef}
-                                            initialRegion={{
-                                                latitude: Number(alertData.lat),
-                                                longitude: Number(alertData.log),
-                                                latitudeDelta: 0.006,
-                                                longitudeDelta: 0.006,
-                                            }}
-                                        >
-                                            <Marker.Animated
-                                                ref={viewRef}
-                                                coordinate={{ latitude: Number(alertData.lat), longitude: Number(alertData.log)}}
-                                            />
-                                        </MapView.Animated>
-                                    )}
-                                 
-                                 
-                                </View>
-                            </View>
-
-                            <View
-                                style={{
-                                flexDirection: "row",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                }}
-                            >
-                                <TouchableOpacity onPress={handleSosPolice}>
-                                    <View style={styles.notifyButton}>
-                                        <Text
-                                        style={{ color: "white", fontSize: 16, fontWeight: "bold" }}
-                                        >
-                                        SOS Policia
-                                        </Text>
-                                    </View>
-                                </TouchableOpacity>
-                                <TouchableOpacity onPress={handleFinishSos}>
-                                    <View style={styles.notifyButton}>
-                                        <Text
-                                        style={{ color: "white", fontSize: 16, fontWeight: "bold" }}
-                                        >
-                                        Encerrar alerta
-                                        </Text>
-                                    </View>
-                                </TouchableOpacity>
-                            </View>
-                            </View>
-                    </View>
-                    </Modal.Content>
+                <Modal isOpen={showModal} onClose={() => setShowModal(false)} style={{ backgroundColor: 'red' }}>
+                    <AlertSos
+                        email={alertData.email}
+                        lat={alertData.lat}
+                        log={alertData.log}
+                        buttonEncerra={handleFinishSos}  
+                        buttonFecha={() => setShowModal(false)}  
+                        buttonSOSPolicia={handleSosPolice}  
+                        car={alertData.car}
+                        
+                    />
                 </Modal>
-                </Center>
-          {children}
+            </Center>
+            {children}
         </AlertContext.Provider>
-      )
+    )
 }
-
-const styles = EStyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: "#5372ef",
-    },
-    iconContent: {
-      flexDirection: "row",
-      alignItems: "center",
-      justifyContent: "space-between",
-      paddingHorizontal: "2rem",
-      marginTop: "1.5rem",
-      marginRight: "1rem",
-    },
-    notifyBox: {
-      alignItems: "center",
-    },
-    notifyContent: {
-      height: "23rem",
-      width: "19.7rem",
-      backgroundColor: "#fff",
-      borderRadius: "2rem",
-      paddingVertical: "1.4rem",
-      fontSize: "1rem",
-    },
-    notifyButton: {
-      backgroundColor: "#aa271b",
-      width: "8rem",
-      height: "2rem",
-      borderRadius: "1rem",
-      alignItems: "center",
-      justifyContent: "center",
-      marginRight: "1rem",
-      marginTop: "1rem",
-    },
-    map: {
-        width: '100%',
-        height: 100
-    }
-  });
 
 export default alertProvider;

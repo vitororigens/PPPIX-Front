@@ -1,5 +1,5 @@
-import axios, { AxiosInterceptorOptions, AxiosProxyConfig, AxiosRequestConfig } from "axios";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import axios from "axios";
+
 
 const api = axios.create({
   baseURL: "https://backend.pppix.app.br/api",

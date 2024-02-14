@@ -4,23 +4,23 @@ import EStyleSheet from "react-native-extended-stylesheet";
 import IconAnt from "react-native-vector-icons/AntDesign";
 import {useAuth} from '../hooks/useAuth'
 import {useAxios} from '../hooks/useAxios'
-import { useEffect,useState } from 'react';
+import {useState } from 'react';
 import { useToast } from "native-base";
 
 export default function Person() {
-    const { authData, passwords, setAuthData } = useAuth()
+    const { authData, setAuthData } = useAuth()
     const { api } = useAxios()
     const toast = useToast();
     
-    const [passwordEmergecy, setPasswordEmergecy] = useState(authData?.user.passwordEmergecy)
-    const [passwordBank, setPasswordBank] = useState(authData?.user.passwordBank)
-    const [passwordApp, setPasswordApp] = useState(authData?.user.passwordApp)
+    const [passwordEmergecy, setPasswordEmergecy] = useState(authData?.passwordEmergecy)
+    const [passwordBank, setPasswordBank] = useState(authData?.passwordBank)
+    const [passwordApp, setPasswordApp] = useState(authData?.passwordApp)
 
     function handleSavePasswords() {
 
         api.post('user/change/passwords', { passwordApp, passwordEmergecy, passwordBank })
         .then(() => {
-            setAuthData({ ...authData, user:{ ...authData?.user, passwordApp, passwordEmergecy, passwordBank} })
+            setAuthData({ ...authData, user:{ ...authData, passwordApp, passwordEmergecy, passwordBank} })
             toast.show({
                 title: "Senhas alteradas com sucesso!",
                 placement: "top",
@@ -72,7 +72,7 @@ export default function Person() {
                         Email
                     </Text>
                     <Text fontFamily={"body"} color={"white"}>
-                        { authData?.user.email }
+                        { authData?.email }
                     </Text>
                 </Box>
                 </Flex>
@@ -105,7 +105,7 @@ export default function Person() {
                         Telefone
                     </Text>
                     <Text fontFamily={"body"} color={"white"}>
-                        { authData?.user.phone }
+                        { authData?.phone }
                     </Text>
                 </Box>
                 </Flex>

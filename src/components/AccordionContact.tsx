@@ -1,7 +1,7 @@
 import { Checkbox, HStack, Radio } from "native-base";
 import React from "react";
 import { Text, View, TouchableOpacity } from "react-native";
-import IconFont from "react-native-vector-icons/Feather";
+import IconFont from "react-native-vector-icons/FontAwesome5";
 import EStyleSheet from "react-native-extended-stylesheet";
 
 type AccordionContentProps = {
@@ -28,7 +28,7 @@ export function AccordionContact({ name, icon, id, deleteHandle }: AccordionCont
           flexDirection: "row",
         }}
       >
-        <IconFont name={"user"} size={30} color={"black"} />
+        <IconFont name={"car-alt"} size={30} color={"black"} />
         <View
           style={{
             flexDirection: "column",
@@ -42,10 +42,9 @@ export function AccordionContact({ name, icon, id, deleteHandle }: AccordionCont
         </View>
         <View style={styles.toogleStyle}>
           <HStack space={8}>
-            <Radio value={id} my={1} accessibilityLabel="checkbox">
-            </Radio>
+          <Radio value={id ?? ""} my={1} accessibilityLabel="checkbox" />
           </HStack>
-          <TouchableOpacity onPress={() => deleteHandle()}>
+          <TouchableOpacity onPress={() => deleteHandle && deleteHandle()}>
             <IconFont
               
               style={{

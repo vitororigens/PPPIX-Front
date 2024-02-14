@@ -1,5 +1,4 @@
 import React, { createContext, useEffect, useState } from "react";
-import { AppState } from "react-native";
 import * as ContactsExpo from "expo-contacts";
 
 interface ContactsProviderProps {

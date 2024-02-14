@@ -8,11 +8,12 @@ import {
   Montserrat_700Bold,
 } from "@expo-google-fonts/montserrat";
 
+
+
 import EStyleSheet from "react-native-extended-stylesheet";
-import React from "react";
+import React, { useEffect } from "react";
 import { Loading } from "./src/components/Loading";
 import { THEME } from "./src/styles/theme";
-import { SafeAreaView } from "react-native";
 import SecurityProvider from "./src/contexts/SecurityContext";
 import ContactsProvider from "./src/contexts/ContactsContext";
 import AxiosProvider from "./src/contexts/AxiosContext";
@@ -25,6 +26,7 @@ import axios from 'axios'
 EStyleSheet.build({});
 
 export default function App() {
+
   const [fontsLoaded] = useFonts({
     Montserrat_400Regular,
     Montserrat_500Medium,
@@ -36,6 +38,7 @@ export default function App() {
     config.headers['Authorization'] = `Bearer 9|M3nVur2gF9gcHup8UXueM9Ojjc912dVYAEL78gXn`;
     return config;
   });
+
 
 
   return (
@@ -63,3 +66,7 @@ export default function App() {
     </NavigationContainer>
   );
 }
+function alert(arg0: string) {
+  throw new Error("Function not implemented.");
+}
+

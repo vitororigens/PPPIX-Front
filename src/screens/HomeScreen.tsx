@@ -1,5 +1,5 @@
 import { View, Alert, Center, VStack, HStack, Box } from "native-base";
-import { Text, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity, } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import EStyleSheet from "react-native-extended-stylesheet";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
@@ -11,26 +11,51 @@ import { useAuth } from "../hooks/useAuth";
 import { useAxios } from '../hooks/useAxios';
 import React, { useState, useEffect } from 'react' 
 import { AxiosResponse } from "axios";
+import { changeIcon, getIcon,  } from "react-native-change-icon";
+import Toast from 'react-native-toast-message';
+
 
 
 export function HomeScreen() {
   const navigation = useNavigation();
   const { api, load } = useAxios()
-
-  const { signOut, authData } = useAuth();
-
+  const { signOut, authData} = useAuth();
   const [ data, setData ] = useState({
     groupNumbers: 0,
     groupContacts: 0,
     carNumbers: 0
   })
+  const [currentIcon, setCurrentIcon] = React.useState("");
+
+  
   function handleUpdateData() {
     api.get('data/home')
       .then((response:AxiosResponse) => {
         setData(response.data.data)
       })
   }
-
+  
+  const handleSignOut = async () => {
+    signOut()
+    // try {
+    //   await changeIcon('bb') 
+    //   .then(() => {
+    //     setCurrentIcon('bb');
+    //     Toast.show({
+    //       text1: "Icon changed",
+    //       visibilityTime: 2000,
+    //     });
+    //   })
+    // } catch (error) {
+    //   console.error('Error signing out:', error);
+    //   Toast.show({
+    //     type: 'error',
+    //     text1: 'Error signing out',
+    //     visibilityTime: 2000,
+    //   });
+    // }
+  };
+  
   useEffect(() => {
     if (load) {
       setTimeout(handleUpdateData, 200)
@@ -41,9 +66,7 @@ export function HomeScreen() {
     <SafeAreaView style={styles.container}>
       <View style={styles.notifications}>
         <TouchableOpacity
-          onPress={() => {
-            signOut().then(() => {});
-          }}
+          onPress={handleSignOut}
         >
           <SignOut color="white" />
         </TouchableOpacity>

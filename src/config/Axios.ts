@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const api = axios.create({
-  baseURL: "https://backend.pppix.app.br/api",
+  baseURL: "http://77.37.40.46/api",
   headers: {
     'accept': 'application/json'
   }

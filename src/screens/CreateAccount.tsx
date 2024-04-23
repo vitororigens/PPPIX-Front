@@ -54,26 +54,26 @@ export function CreateAccount() {
       return;
     }
 
-      if (email == '' || password == '' || phone == '') {
-        toast.show({
-          title: "Por favor preencha todos os campos!",
-          placement: "top",
-          bgColor: "red.500",
-          duration: 5000,
-        });
-        setLoading(false);
-        return;
-      }
+    if (email == '' || password == '' || phone == '') {
+      toast.show({
+        title: "Por favor preencha todos os campos!",
+        placement: "top",
+        bgColor: "red.500",
+        duration: 5000,
+      });
+      setLoading(false);
+      return;
+    }
 
-      signUp({ email, password, phone })
+    signUp({ email, password, phone })
       .then(() => {
         navigation.navigate("signIn");
       })
       .catch(() => {
-
+        console.log('Erro')
       })
 
-      
+
 
     setLoading(false);
   }
@@ -94,13 +94,13 @@ export function CreateAccount() {
         <Text style={styles.formText}>
           Gerenciamento do seu aplicativo é muito fácil e melhor, seguro!
         </Text>
-         <MaskInput
-            placeholder="Telefone"
-            style={styles.formEmail}
-            value={phone}
-            onChangeText={(masked, unmasked) => setPhone(unmasked)}
-            mask={['(', /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
-          />
+        <MaskInput
+          placeholder="Telefone"
+          style={styles.formEmail}
+          value={phone}
+          onChangeText={(masked, unmasked) => setPhone(unmasked)}
+          mask={['(', /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+        />
         <TextInput
           placeholder="E-mail"
           style={styles.formEmail}
@@ -165,12 +165,14 @@ export function CreateAccount() {
               size="sm"
               value={"teste"}
               onChange={(value) => setPolitcyTerms(value)}
-              children={
-                <Text style={styles.formCheckboxText}>
-                  Eu concordo com os termos de política de privacidade
-                </Text>
-              }
+              aria-label="Eu concordo com os termos de política de privacidade"
             />
+
+            <Text style={{
+              marginLeft:5
+            }}>
+              Eu concordo com os termos de política de privacidade.
+            </Text>
           </View>
         </View>
 
@@ -249,6 +251,7 @@ const styles = EStyleSheet.create({
   formCheckbox: {
     alingItems: "center",
     justifyContent: "center",
+    flexDirection: "row",
   },
   formCheckboxText: {
     overflow: "hidden",

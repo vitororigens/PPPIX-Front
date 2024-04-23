@@ -11,8 +11,6 @@ import { useAuth } from "../hooks/useAuth";
 import { useAxios } from '../hooks/useAxios';
 import React, { useState, useEffect } from 'react' 
 import { AxiosResponse } from "axios";
-import { changeIcon, getIcon,  } from "react-native-change-icon";
-import Toast from 'react-native-toast-message';
 
 
 

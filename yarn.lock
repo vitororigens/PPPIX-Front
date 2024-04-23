@@ -2863,6 +2863,11 @@
   resolved "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.5.tgz"
   integrity sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==
 
+"@types/react-native-background-timer@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@types/react-native-background-timer/-/react-native-background-timer-2.0.2.tgz#22f9126124068a0ee6a812e16f98e270c2b9b2c7"
+  integrity sha512-cMAep0M5yqUHjiiRPvGiviqiJYdI45KSjbI5ufsIFSQGFwHwrHJC/8yawNhy0G3Gix6fufWLsEj6jC5niUNHiQ==
+
 "@types/react-native-vector-icons@^6.4.12":
   version "6.4.12"
   resolved "https://registry.npmjs.org/@types/react-native-vector-icons/-/react-native-vector-icons-6.4.12.tgz"
@@ -4357,6 +4362,11 @@ expo-background-fetch@~11.0.1:
   dependencies:
     expo-task-manager "~11.0.0"
 
+expo-brightness@~11.0.1:
+  version "11.0.1"
+  resolved "https://registry.yarnpkg.com/expo-brightness/-/expo-brightness-11.0.1.tgz#789b7a1fbbee856144a0387b7af4dcb3d1952ba6"
+  integrity sha512-t5SJzYQLCawXK3UOollQuyNiVs6h05EhNQwfD2HGMtidroyoD70yN/t0v+svZ3wjzlKRWHnOOT/rdlU5PGSrJg==
+
 expo-constants@~14.0.0, expo-constants@~14.0.2:
   version "14.0.2"
   resolved "https://registry.npmjs.org/expo-constants/-/expo-constants-14.0.2.tgz"
@@ -4418,6 +4428,13 @@ expo-modules-core@1.0.3:
   integrity sha512-XqyA5c+zsK+cHDNVBVYu62HLBHyGMG0iWpXVP0bBQJWz0eyg5rcuEqLsnRTmoEz0YnH6QBf/cwRl+FfgnnH5Og==
   dependencies:
     compare-versions "^3.4.0"
+    invariant "^2.2.4"
+
+expo-sensors@~12.0.1:
+  version "12.0.1"
+  resolved "https://registry.yarnpkg.com/expo-sensors/-/expo-sensors-12.0.1.tgz#ec8a285bb672ca73a6e1d5be95c78ee225c1641d"
+  integrity sha512-XsrHC7RD8dx9jHiY7DKvMhm14k59uCyKoZki0A0hyOn8NeVG/GUuCZtZwqFog2Ozc4jKidBWQ1OQp5Xq4xJXvQ==
+  dependencies:
     invariant "^2.2.4"
 
 expo-splash-screen@~0.17.5:
@@ -7016,7 +7033,7 @@ react-is@^17.0.1:
 
 react-native-background-timer@^2.4.1:
   version "2.4.1"
-  resolved "https://registry.npmjs.org/react-native-background-timer/-/react-native-background-timer-2.4.1.tgz"
+  resolved "https://registry.yarnpkg.com/react-native-background-timer/-/react-native-background-timer-2.4.1.tgz#a3bc1cafa8c1e3aeefd0611de120298b67978a0f"
   integrity sha512-TE4Kiy7jUyv+hugxDxitzu38sW1NqjCk4uE5IgU2WevLv7sZacaBc6PZKOShNRPGirLl1NWkaG3LDEkdb9Um5g==
 
 react-native-change-icon@^4.0.0:

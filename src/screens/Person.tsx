@@ -1,5 +1,5 @@
 import {View, SafeAreaView, TextInput, TouchableOpacity, ScrollView, Text as TextReact} from 'react-native'
-import { Box, Flex, Text} from 'native-base'
+import { Box, Flex, Switch, Text} from 'native-base'
 import EStyleSheet from "react-native-extended-stylesheet";
 import IconAnt from "react-native-vector-icons/AntDesign";
 import {useAuth} from '../hooks/useAuth'
@@ -15,12 +15,16 @@ export default function Person() {
     const [passwordEmergecy, setPasswordEmergecy] = useState(authData?.passwordEmergecy)
     const [passwordBank, setPasswordBank] = useState(authData?.passwordBank)
     const [passwordApp, setPasswordApp] = useState(authData?.passwordApp)
+    const [passwordDevice, setPasswordDevice] = useState(authData?.passwordDevice)
+    const [passwordDeviceEmergency, setPasswordDeviceEmergency] = useState(authData?.passwordDeviceEmergency)
+    
+    // const [isSwitchOn, setIsSwitchOn] = useState(false);
 
     function handleSavePasswords() {
 
-        api.post('user/change/passwords', { passwordApp, passwordEmergecy, passwordBank })
+        api.post('user/change/passwords', { passwordApp, passwordEmergecy, passwordBank, passwordDevice, passwordDeviceEmergency })
         .then(() => {
-            setAuthData({ ...authData, user:{ ...authData, passwordApp, passwordEmergecy, passwordBank} })
+            setAuthData({ ...authData, user:{ ...authData, passwordApp, passwordEmergecy, passwordBank, passwordDevice, passwordDeviceEmergency} })
             toast.show({
                 title: "Senhas alteradas com sucesso!",
                 placement: "top",
@@ -31,6 +35,11 @@ export default function Person() {
         
         
     }
+    // const toggleSwitch = () => {
+    //     setIsSwitchOn(previousState => !previousState);
+    // };
+
+    
     
     return (
         <SafeAreaView style={styles.container}>
@@ -46,13 +55,16 @@ export default function Person() {
                 contentContainerStyle={{
                     paddingBottom:50
                   }}
+                  showsHorizontalScrollIndicator={false}
+                  showsVerticalScrollIndicator={false}
             >
             <Flex
                 bgColor={"violet.500"}
                 mb={2}
                 p={6}
                 rounded="md"
-                shadow={"2"}
+                shadow="md" 
+                overflow="hidden"
                 flexDir="row"
                 justifyContent="space-between"
                 alignItems="center"
@@ -85,7 +97,8 @@ export default function Person() {
                 mb={2}
                 p={6}
                 rounded="md"
-                shadow={"2"}
+                shadow="md"
+                overflow="hidden"
                 flexDir="row"
                 justifyContent="space-between"
                 alignItems="center"
@@ -115,7 +128,7 @@ export default function Person() {
             </Flex>
             <View style={styles.content}>
                 <View style={{ marginTop: 10 }}>
-                    <TextReact style={{ fontSize: 30, fontWeight: "bold" }}>Suas senhas</TextReact>
+                    <TextReact style={{ fontSize: 26, fontWeight: "bold" }}>Suas senhas</TextReact>
                 </View>
                 <View style={styles.formStyle}>
                     <View
@@ -125,14 +138,14 @@ export default function Person() {
                         width: "100%",
                         }}
                     > 
-                        <Text style={styles.label}>Senha emergencia</Text>
+                        <Text style={styles.label}>Senha emergência</Text>
                         <TextInput
                         placeholder="Modelo"
                         style={styles.formSenha}
                         value={passwordEmergecy}
                         onChangeText={(text) => setPasswordEmergecy(text)}
                         />
-                        <Text style={styles.label}>Senha banco</Text>
+                        <Text style={styles.label}>Senha Banco</Text>
                         <TextInput
                         placeholder="Modelo"
                         style={styles.formSenha}
@@ -146,8 +159,37 @@ export default function Person() {
                         value={passwordApp}
                         onChangeText={(text) => setPasswordApp(text)}
                         />
+                        {/* <Text style={styles.label}>Senha de Tela de Bloqueio</Text>
+                        <TextInput
+                        placeholder="Modelo"
+                        style={styles.formSenha}
+                        value={passwordDevice}
+                        onChangeText={(text) => setPasswordDevice(text)}
+                        />
+                         <Text style={styles.label}>Senha de Tela de Bloqueio de Emergência</Text>
+                        <TextInput
+                        placeholder="Modelo"
+                        style={styles.formSenha}
+                        value={passwordDeviceEmergency}
+                        onChangeText={(text) => setPasswordDeviceEmergency(text)}
+                        /> */}
+                        <View style={{
+                            marginTop: 10,
+                            width: '100%',
+                            alignItems:'flex-start'
+                        }}>
+                        {/* <Switch
+                                trackColor={{ false: "#767577", true: "#81b0ff" }}
+                                thumbColor={isSwitchOn ? "#f5dd4b" : "#f4f3f4"}
+                                ios_backgroundColor="#3e3e3e"
+                                onValueChange={toggleSwitch}
+                                value={isSwitchOn}
+                                
+                         /> */}
+                        </View>
 
                     </View>
+                  
                 </View>
             </View>
             <TouchableOpacity
@@ -177,6 +219,7 @@ const styles = EStyleSheet.create({
       width: "19.7rem",
       backgroundColor: "#fff",
       padding: "1rem",
+      borderRadius: 10,
     },
     formStyle: {
         alignItems: "center",

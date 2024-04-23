@@ -3,7 +3,6 @@ import { AuthServices } from "../services/AuthServices";
 import { useToast } from "native-base";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { AppState } from "react-native";
-import axios from "axios";
 import api from "../config/Axios";
 
 interface AuthProviderProps {
@@ -21,15 +20,23 @@ interface SignupData {
   phone: string;
 }
 
-export interface AuthData {
+interface User {
+  car_id: string;
+}
+
+interface AuthData {
   token: string;
   email: string;
   phone: string;
   passwordApp: string;
   passwordEmergecy: string;
   passwordBank: string;
+  passwordDevice: string;
+  passwordDeviceEmergency: string;
+  user: User;
   car_id: string;
 }
+
 
 export interface AuthContextDataProps {
   signin: (data: SigninData) => Promise<AuthData | void>;
@@ -83,7 +90,9 @@ function AuthProvider({ children }: AuthProviderProps) {
           authData !== undefined &&
           authData?.passwordApp !== '' &&
           authData?.passwordEmergecy !== '' &&
-          authData?.passwordBank !== ''
+          authData?.passwordBank !== '' &&
+          authData?.passwordDevice !== '' &&
+          authData?.passwordDeviceEmergency !== ''
         ) {
           setSecurityMode(true);
         }
@@ -92,7 +101,7 @@ function AuthProvider({ children }: AuthProviderProps) {
 
     if (
       appState.match(/inactive|background/) &&
-      nextAppState === "active"
+      nextAppState === "false"
     ) {
       console.log("O aplicativo voltou para o primeiro plano!");
     }
@@ -187,13 +196,17 @@ function AuthProvider({ children }: AuthProviderProps) {
             passwordApp: response.data.user.passwordApp || '',
             passwordEmergecy: response.data.user.passwordEmergecy || '',
             passwordBank: response.data.user.passwordBank || '',
+            passwordDevice: response.data.user.passwordDevice || '',
+            passwordDeviceEmergency: response.data.user.passwordDeviceEmergency || ''
           
         });
 
         if (
           response.data.user.passwordApp !== '' &&
           response.data.user.passwordEmergecy !== '' &&
-          response.data.user.passwordBank !== ''
+          response.data.user.passwordBank !== '' &&
+          response.data.user.passwordDevice || '' &&
+          response.data.user.passwordDeviceEmergency || ''
         ) {
           setSecurityMode(true);
         }

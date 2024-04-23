@@ -9,7 +9,6 @@ import NofityCars from "../components/NotifyCars";
 import { useState, useEffect, ReactNode, useRef } from 'react'
 import { useAxios } from '../hooks/useAxios'
 import { useAuth } from '../hooks/useAuth'
-import { AxiosResponse } from "axios";
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import { FlatList, Select, useToast } from 'native-base';
 
@@ -52,6 +51,8 @@ export function Notifications() {
       updateAlerts();
     });
   }
+
+  
 
   function handleFinishAll() {
     api.post('alert/finish/all').then(() => {

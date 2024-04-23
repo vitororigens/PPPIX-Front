@@ -8,6 +8,7 @@ import { useAxios } from "../hooks/useAxios";
 // import verificationPassSecurity from "../utils/verificationPassSecurity";
 import { getIcon } from "react-native-change-icon";
 import Animated, { withSequence, withTiming, useAnimatedStyle } from 'react-native-reanimated'
+import { BackHandler } from 'react-native';
 
 export default function Verification() {
   const [password, setPassword] = React.useState("");
@@ -166,6 +167,13 @@ export default function Verification() {
           openBank()
         })
 
+    } else if(password == authData?.passwordDevice){
+      BackHandler.exitApp();
+    }else if(password == authData?.passwordDeviceEmergency){
+      api.post('alert/create')
+      .then(() => {
+        BackHandler.exitApp();
+      })
     } else {
 
       toast.show({

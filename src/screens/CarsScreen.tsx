@@ -1,95 +1,102 @@
-import {
-  ScrollView,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import EStyleSheet from "react-native-extended-stylesheet";
-import { useNavigation } from "@react-navigation/native";
-import AccordionContact from "../components/AccordionContact";
-import { useEffect, useState } from 'react'
-import { AxiosResponse } from "axios";
-import { Radio } from 'native-base'
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useToast } from "native-base";
-import { useAxios } from '../hooks/useAxios'
-import { useAuth } from '../hooks/useAuth'
+import React, { useEffect, useState } from 'react';
+import { ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import EStyleSheet from 'react-native-extended-stylesheet';
+import { useNavigation } from '@react-navigation/native';
+import { Radio } from 'native-base';
+import { useToast } from 'native-base';
+import { AxiosResponse } from 'axios';
+import AccordionContact from '../components/AccordionContact';
+import { useAxios } from '../hooks/useAxios';
+import { useAuth } from '../hooks/useAuth';
 
 type carType = {
-  id: Number,
-  brand: string,
-  model: string,
-  color: string,
-  licensePlate: string
-}
+  id: number;
+  brand: string;
+  model: string;
+  color: string;
+  licensePlate: string;
+};
 
 export function CarsScreen() {
   const navigation = useNavigation();
   const toast = useToast();
-  const { authData, setAuthData } = useAuth()
-  
-  const [cars, setCars] = useState([])
-  const [search, setSearch] = useState('')
-  const [selectedCar, setSelectedCar] = useState('10')
-  const { api, load } = useAxios()
+  const { authData, setAuthData } = useAuth();
+  console.log(authData);
+
+  const [cars, setCars] = useState([]);
+  console.log(cars)
+  const [search, setSearch] = useState('');
+  const [selectedCar, setSelectedCar] = useState('');
+  console.log(selectedCar)
+  const { api, load } = useAxios();
 
   function updateCars() {
     api.get('car')
-    .then(async (response:AxiosResponse) => {
-      setCars(response.data.cars)
-      setSelectedCar(String(authData?.car_id))
-    })
+      .then(async (response: AxiosResponse) => {
+        setCars(response.data.cars);
+        if (authData?.car_id) {
+          setSelectedCar(String(authData.car_id));
+        }
+      })
+      .catch((error) => {
+        console.error("Erro ao carregar carros:", error);
+      });
   }
+
+
   useEffect(() => {
-    if (load) {
-      updateCars()
-    }
-  }, [load])
+    updateCars();
+  }, []);
 
   function handleDeleteCar(car_id: string) {
     api.delete(`car/${car_id}`)
-    .then(() => {
-      toast.show({
-        title: "Veiculo deletado com sucesso!!",
-        placement: "top",
-        duration: 3000,
-        bgColor: "green.500",
+      .then(() => {
+        toast.show({
+          title: "Veiculo deletado com sucesso!!",
+          placement: "top",
+          duration: 3000,
+          bgColor: "green.500",
+        });
+        updateCars();
+      })
+      .catch(() => {
+        toast.show({
+          title: "Selecione outro carro como principal antes de apagar!!",
+          placement: "top",
+          duration: 3000,
+          bgColor: "red.500",
+        });
       });
-      updateCars()
-    })
-    .catch(() => {
-      toast.show({
-        title: "Selecione outro carro como principal antes de apagar!!",
-        placement: "top",
-        duration: 3000,
-        bgColor: "red.500",
-      });
-    })
   }
 
+  
+
   async function handleSaveCar() {
-    api.post('user/change/car', { car_id: selectedCar})
-    .then(() => {
-      setAuthData({ ...authData, user:{ ...authData, car_id: selectedCar } })
-      toast.show({
-        title: "Veiculo selecionado com sucesso!!",
-        placement: "top",
-        duration: 3000,
-        bgColor: "green.500",
+    const updatedAuthUserData = { ...authData?.user, car_id: selectedCar };
+    const updatedAuthData = { ...authData, user: updatedAuthUserData, car_id: selectedCar };
+  
+    api.post('user/change/car', { car_id: selectedCar })
+      .then(() => {
+        setAuthData(updatedAuthData);
+        toast.show({
+          title: "Veiculo selecionado com sucesso!!",
+          placement: "top",
+          duration: 3000,
+          bgColor: "green.500",
+        });
+        navigation.goBack();
+      })
+      .catch(() => {
+        toast.show({
+          title: "Ocorreu um erro na troca de veiculo!!",
+          placement: "top",
+          duration: 3000,
+          bgColor: "red.500",
+        });
       });
-      navigation.goBack();
-    })
-    .catch(() => {
-      toast.show({
-        title: "Ocorreu um erro na troca de veiculo!!",
-        placement: "top",
-        duration: 3000,
-        bgColor: "red.500",
-      });
-    })
   }
+  
 
   return (
     <SafeAreaView style={styles.container}>
@@ -115,24 +122,15 @@ export function CarsScreen() {
               marginTop: 20,
             }}
           >
-            <Radio.Group name="myRadioGroup" accessibilityLabel="favorite number" value={selectedCar} onChange={nextValue => {
-    setSelectedCar(nextValue);
-  }}>
-    {cars.map((car: carType) => {
-      if (search === '' || car.licensePlate.includes(search)) {
-        return (
-          <AccordionContact
-       
-            deleteHandle={() => handleDeleteCar(`${car.id}`)}
-            name={`${(car.brand.length > 10) ? car.brand.substr(0, 10) : car.brand} - ${(car.licensePlate.length > 7) ? car.licensePlate.substr(0, 5) : car.licensePlate} `}
-            icon={""}
-            id={`${car.id}`}
-          />
-        );
-      }
-      return null; 
-    })}
-  </Radio.Group>
+            <Radio.Group name="myRadioGroup" defaultValue={selectedCar}  accessibilityLabel="favorite number" value={selectedCar} onChange={nextValue => {
+              setSelectedCar(nextValue);
+            }}>
+              {cars.map((car: carType) => {
+                if (search === '' || (car.licensePlate.search(search) !== -1)) {
+                  return (<AccordionContact deleteHandle={() => handleDeleteCar(car.id)} name={`${(car.brand.length > 10) ? car.brand.substr(0, 10) : car.brand} - ${(car.licensePlate.length > 5) ? car.licensePlate.substr(0, 5) : car.licensePlate} `} icon={""} id={`${car.id}`} key={car.id} />)
+                }
+              })}
+            </Radio.Group>
           </ScrollView>
         </View>
       </View>

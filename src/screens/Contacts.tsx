@@ -15,8 +15,7 @@ import React, {
   useEffect,
   useMemo,
   useRef,
-  useState,
-  SetStateAction
+  useState
 } from "react";
 import { FlashList } from "@shopify/flash-list";
 import { Header } from "../components/Header";
@@ -33,39 +32,27 @@ import { useToast } from "native-base";
 import { AxiosResponse } from "axios";
 import { useAxios } from '../hooks/useAxios'
 import Feather from "react-native-vector-icons/Feather";
+interface ExtendedContact extends ContactsExpo.Contact {
+  phoneClean: string;
+  phone: string;
+}
+
+
 
 export function Contacts() {
   const { allContacts, statusServiceContacts } = useContacts();
-
-  const { authData } = useAuth();
   const { api } = useAxios()
 
   //get width and height of the screen with react-native Dimensions
   const { width, height } = Dimensions.get("screen");
   const [loading, setLoading] = useState(true);
-  const [contacts, setContacts] = useState<ContactsExpo.Contact[]>([]);
-  const [ validContact, setValidContact ] = useState([])
+  const [contacts, setContacts] = useState<ExtendedContact[]>([]);
+  const [validContact, setValidContact] = useState<{ phone: string }[]>([]);
   const [groupContact, setGroupContact] = useState<{ phone: string }[]>([]);
-  const [contactsToSearch, setContactsToSearch] = useState<
-    ContactsExpo.Contact[]
-  >([]);
   const [selectedContacts, setSelectedContacts] = useState<any[]>([]);
-  console.log(selectedContacts);
   const [selectingVisible, setSelectingVisible] = useState(false);
-  const [select, setSelect] = useState<undefined | SetStateAction<string>>(undefined);
+  const [select, setSelect] = useState<string | undefined>(undefined);
   const toast = useToast();
-
-  const handleSelectContact = useCallback((contact: any) => {
-    setSelectedContacts((oldState) => {
-      const isContactSelected = oldState.find((item) => item.id === contact.id);
-
-      if (isContactSelected) {
-        return oldState.filter((item) => item.id !== contact.id);
-      }
-
-      return [...oldState, contact];
-    });
-  }, []);
 
   const search = (text: string) => {
     const filteredContacts = allContacts.filter((contact) => {
@@ -76,7 +63,7 @@ export function Contacts() {
       return (
         (
           select == 'notValid' ||
-          (select == 'valid' && validContact.find((contact:any) => phoneFilter?.includes(contact.phone) ))
+          (select == 'valid' && validContact.find((contact) => phoneFilter?.includes(contact.phone) ))
         ) &&
         (
           text.length == 0 ||
@@ -86,9 +73,21 @@ export function Contacts() {
         )
       );
     });
-
-    setContacts(filteredContacts);
-};
+  
+    const extendedFilteredContacts: ExtendedContact[] = filteredContacts.map(contact => {
+      const { phoneNumbers, emails, ...rest } = contact;
+      const phoneClean = phoneNumbers?.[0]?.number?.replace(/\s/g, '').replace(/\D/g, "") || '';
+      const phone = phoneNumbers?.[0]?.number || '';
+      return {
+        ...rest,
+        phoneClean,
+        phone
+      };
+    });
+  
+    setContacts(extendedFilteredContacts);
+  };
+  
 
   function handleSendSmsInvite(number:string){
     api.post('sms/invite', {number})
@@ -111,28 +110,33 @@ export function Contacts() {
   }
 
   useEffect(() => {
-    LogBox.ignoreLogs([
-      "We can not support a function callback. See Github Issues for details https://github.com/adobe/react-spectrum/issues/2320",
-    ]);
     if (allContacts.length > 0) {
       api.post('group/users')
-      .then((response: AxiosResponse) => {
-        setContacts(allContacts)
-        setGroupContact(response.data.group)
-        setValidContact(response.data.numbers)
-        setSelect('valid')
-      })
-      setLoading(false);
+        .then((response: AxiosResponse) => {
+          const extendedContacts: ExtendedContact[] = allContacts.map(contact => {
+            const { phoneNumbers, emails, ...rest } = contact;
+            const phoneClean = phoneNumbers?.[0]?.number?.replace(/\s/g, '').replace(/\D/g, "") || '';
+            const phone = phoneNumbers?.[0]?.number || '';
+            return {
+              ...rest,
+              phoneClean,
+              phone
+            };
+          });
+          setContacts(extendedContacts);
+          setGroupContact(response.data.group);
+          setValidContact(response.data.numbers);
+          setSelect('valid');
+        })
+        .finally(() => setLoading(false));
     }
   }, []);
-
-  // ref
+  
   const bottomSheetRef = useRef<BottomSheet>(null);
 
-  // variables
+
   const snapPoints = useMemo(() => ["40%", "80%", "40%"], []);
 
-  // callbacks
   const handleSheetChanges = useCallback((index: number) => {
     console.log("handleSheetChanges", index);
   }, []);
@@ -167,17 +171,24 @@ export function Contacts() {
           const index = newGroupContactArray.findIndex((groupContact) => number.includes(groupContact));
           newGroupContactArray.splice(index, 1);
           setGroupContact(newGroupContactArray)
+          toast.show({
+            title: "Usuário removido com sucesso.\nApenas um usuário é excluído por vez.",
+            placement: "top",
+            duration: 3000,
+            bgColor: "red.500",
+          });
+          
         } else {
           console.log('adicionar')
-          let newGroupContactArray = [...groupContact, {phone: numberClean}]
-          setGroupContact(newGroupContactArray)
+          setGroupContact(prevGroupContact => [...prevGroupContact, { phone: numberClean }]);
+          toast.show({
+            title: "Usuário adicionado com sucesso.",
+            placement: "top",
+            duration: 3000,
+            bgColor: "green.500",
+          });
         }
-        toast.show({
-          title: response.data.message,
-          placement: "top",
-          duration: 3000,
-          bgColor: "green.500",
-        });
+        
       })
   }
   
@@ -189,7 +200,7 @@ export function Contacts() {
     contact,
     isVisible,
   }: {
-    contact: ContactsExpo.Contact;
+    contact: ExtendedContact;
     isVisible: boolean;
   }) => {
     return (
@@ -207,7 +218,6 @@ export function Contacts() {
           alignItems={"center"}
         >
           <Box w={"70%"}>
-            {/* texto com reticencias se for mt grande */}
             <Text
               numberOfLines={1}
               ellipsizeMode="tail"
@@ -223,9 +233,9 @@ export function Contacts() {
             </Text>
           </Box>
           <Box>
-            { select == 'valid' && selectingVisible && (validContact.find((contactGroup:any) => contact.phoneClean.includes(contactGroup.phone))) && (
+            { select == 'valid' && selectingVisible && (validContact.find((contactGroup) => contact.phoneClean.includes(contactGroup.phone))) && (
               <Switch
-                defaultIsChecked={(groupContact.find((contactGroup:any) => contact.phoneClean.includes(contactGroup.phone))) ? true : false }
+                defaultIsChecked={(groupContact.find((contactGroup) => contact.phoneClean.includes(contactGroup.phone))) ? true : false }
                 onValueChange={() =>
                   handleChangeContact(contact.phone, contact.phoneClean)
                 }

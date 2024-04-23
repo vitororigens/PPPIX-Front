@@ -28,7 +28,8 @@ async function createChannel() {
 createChannel()
 messaging().setBackgroundMessageHandler(async (remoteMessage) => {
     await notifee.displayNotification({
-        body: `Novo alerta de ${remoteMessage.data.email}`,
+        title:`Atenção ${remoteMessage.data.email} `,
+        body: `Novo alerta de emergência`,
         android: {
             channelId: 'som',
             sound: 'alerta',

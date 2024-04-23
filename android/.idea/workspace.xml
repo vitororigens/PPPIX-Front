@@ -1,15 +1,200 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3a5d95e-6657-46a7-8f03-2c51913b2f5c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GoogleService-Info.plist" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/google-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/google-services.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/debug.keystore.jks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/release/app-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/app-release.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/release/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/output-metadata.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/baresosapp/FileProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/baresosapp/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/baresosapp/MainApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/baresosapp/MyFirebaseMessagingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/baresosapp/OpenappModule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/baresosapp/OpenappPackage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/baresosapp/PowerButtonReceiver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/baresosapp/RNSendINtentModule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/baresosapp/RNSendIntentPackage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/baresosapp/newarchitecture/MainApplicationReactNativeHost.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/baresosapp/newarchitecture/components/MainComponentsRegistry.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/baresosapp/newarchitecture/modules/MainApplicationTurboModuleManagerDelegate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/banco_inter.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/banco_inter.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/crefisa.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/crefisa.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/banco_inter.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/banco_inter.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/crefisa.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/crefisa.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/banco_inter.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/banco_inter.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/crefisa.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/crefisa.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/banco_inter.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/banco_inter.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/crefisa.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/crefisa.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/banco_inter.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/banco_inter.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/crefisa.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/crefisa.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/adaptive-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/splash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../expo-module.config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../google-services.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/baresosapp.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/baresosapp.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/.env.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Console/Kernel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Exceptions/Handler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Http/Controllers/AlertController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Http/Controllers/AuthController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Http/Controllers/CarController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Http/Controllers/Controller.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Http/Controllers/DataController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Http/Controllers/GroupController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Http/Controllers/PositionController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Http/Controllers/SmsController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Http/Controllers/UserController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Http/Kernel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Http/Middleware/Authenticate.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Http/Middleware/EncryptCookies.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Http/Middleware/PreventRequestsDuringMaintenance.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Http/Middleware/TrimStrings.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Http/Middleware/TrustHosts.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Http/Middleware/TrustProxies.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Http/Middleware/ValidateSignature.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Mail/Recover.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Models/Alert.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Models/Car.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Models/EmailCode.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Models/Group.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Models/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Providers/AppServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Providers/AuthServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Providers/BroadcastServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Providers/EventServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/app/Providers/RouteServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/artisan" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/bootstrap/app.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/bootstrap/cache/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/config/app.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/config/auth.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/config/broadcasting.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/config/cache.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/config/cors.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/config/database.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/config/filesystems.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/config/hashing.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/config/logging.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/config/mail.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/config/queue.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/config/sanctum.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/config/services.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/config/session.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/config/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/database/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/database/factories/UserFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/database/migrations/2022_12_13_111744_create_cars_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/database/migrations/2022_12_13_175110_create_groups_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/database/migrations/2022_12_15_212448_create_email_codes_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/database/migrations/2022_12_15_225256_create_alerts_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/database/seeders/DatabaseSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/lang/en/auth.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/lang/en/pagination.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/lang/en/passwords.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/lang/en/validation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/phpunit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/public/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/public/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/resources/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/resources/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/resources/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/resources/views/recover.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/resources/views/welcome.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/routes/api.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/routes/channels.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/routes/console.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/routes/web.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/sos-backend.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/storage/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/storage/app/public/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/storage/framework/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/storage/framework/cache/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/storage/framework/cache/data/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/storage/framework/sessions/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/storage/framework/testing/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/storage/framework/views/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/storage/logs/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/tests/CreatesApplication.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/tests/Feature/ExampleTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/tests/TestCase.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/tests/Unit/ExampleTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sos-backend/vite.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/@types/png.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/@types/styled.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/assets/Bancos/Banco Inter.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../src/assets/Bancos/Banco Inter.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/assets/Bancos/Crefisa.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../src/assets/Bancos/Crefisa.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/assets/logo@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/assets/logo@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/components/Button/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/components/Button/style.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/components/DefaultContainer/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/components/DefaultContainer/style.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/components/Input/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/components/Input/style.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/components/Loading/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/components/Loading/style.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/components/Multimidia/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/components/Multimidia/style.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/config/Axios.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/config/Axios.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/contexts/AlertContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/contexts/AlertContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/contexts/AuthContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/contexts/AuthContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/contexts/AxiosContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/contexts/AxiosContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/routes/app.routes.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/routes/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/screens/CarsScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/screens/CarsScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/screens/CreateAccount.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/screens/CreateAccount.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/screens/Home/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/screens/Home/style.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/screens/HomeScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/screens/HomeScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/screens/Notifications.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/screens/Notifications.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/screens/Person.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/screens/Person.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/screens/Register/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/screens/Register/style.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/screens/RegisterOrSingUp/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/screens/RegisterOrSingUp/style.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/screens/SingUp/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/screens/SingUp/style.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/screens/Start/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/screens/Start/style.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/screens/Verification.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/screens/Verification.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/theme/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,28 +216,32 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2Jp16WVVpUugpumf6VCpJeGlVxR" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ApkExportedModule": "baresosapp.app",
-    "BundleExportedModule": "baresosapp.app",
-    "ExportApk.ApkPathForbaresosapp.app": "D:\\Trabalho\\PPPIX-1.0.8-Old\\sos-app\\android\\app",
-    "ExportBundle.BundlePathForbaresosapp.app": "D:\\Trabalho\\PPPIX-1.0.8-Old\\sos-app\\android\\app",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "cidr.known.project.marker": "true",
-    "last_opened_file_path": "D:/Trabalho/PPPIX-1.0.8-Old/sos-app/android/build.gradle"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ApkExportedModule&quot;: &quot;baresosapp.app&quot;,
+    &quot;BundleExportedModule&quot;: &quot;baresosapp.app&quot;,
+    &quot;ExportApk.ApkPathForbaresosapp.app&quot;: &quot;D:\\Trabalho\\PPPIX-1.0.8-Old\\sos-app\\android\\app&quot;,
+    &quot;ExportBundle.BundlePathForbaresosapp.app&quot;: &quot;D:\\Trabalho\\PPPIX-1.0.8-Old\\sos-app\\android\\app&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Trabalho/PPPIX-1.0.8-Old/sos-app/android/build.gradle&quot;
   },
-  "keyToStringList": {
-    "ExportApk.BuildVariants": [
-      "release"
+  &quot;keyToStringList&quot;: {
+    &quot;ExportApk.BuildVariants&quot;: [
+      &quot;release&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="baresosapp.app.main" />

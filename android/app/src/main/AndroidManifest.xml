@@ -26,6 +26,18 @@
   <uses-permission android:name="android.permission.CALL_PHONE"/>
   <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+  <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+  <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+  <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+  <uses-permission android:name="android.permission.ACTION_SCREEN_ON"/>
+  <uses-permission android:name="android.permission.ACTION_SCREEN_OFF"/>
+  <uses-permission android:name="android.permission.ACTION_USER_PRESENT"/>
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+  
+
+
+
   <queries>
     <package android:name="br.com.bb.android"/>
     <package android:name="com.nu.production"/>
@@ -92,6 +104,7 @@
     android:roundIcon="@mipmap/ic_launcher_round" 
     android:allowBackup="false" android:theme="@style/AppTheme" 
     android:usesCleartextTraffic="true">
+
     <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCH-5KSV9GW44FSSV9DtWbRdejEMx-rZRg"/>
     <meta-data android:name="expo.modules.updates.EXPO_SDK_VERSION" android:value="47.0.0"/>
     <meta-data android:name="expo.modules.updates.ENABLED" android:value="false"/>
@@ -446,5 +459,7 @@
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
     </activity-alias>
+
   </application>
+
 </manifest>

@@ -115,7 +115,7 @@
         <action android:name="com.google.firebase.MESSAGING_EVENT"/>
       </intent-filter>
     </service>
-    <activity android:name=".MainActivity" android:exported="true"/>
+    <activity android:name=".MainActivity" android:exported="true" android:launchMode="singleTask"/>
     <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" android:exported="false"/>
     <activity-alias android:label="PPPIX" android:exported="true" android:icon="@mipmap/ic_launcher" android:name="com.baresosapp.MainActivitydefault" android:enabled="true" android:targetActivity=".MainActivity">
       <intent-filter>

@@ -115,14 +115,36 @@
         <action android:name="com.google.firebase.MESSAGING_EVENT"/>
       </intent-filter>
     </service>
-    <activity android:name=".MainActivity" android:exported="true" android:launchMode="singleTask"/>
-    <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" android:exported="false"/>
-    <activity-alias android:label="PPPIX" android:exported="true" android:icon="@mipmap/ic_launcher" android:name="com.baresosapp.MainActivitydefault" android:enabled="true" android:targetActivity=".MainActivity">
+<!--    <activity android:name=".MainActivity" android:exported="true" android:launchMode="singleTask"/>-->
+
+
+    <activity
+        android:name=".MainActivity"
+        android:excludeFromRecents="true"
+        android:launchMode="singleTask"
+        android:icon="@mipmap/ic_launcher"
+        android:exported="true">
       <intent-filter>
-        <action android:name="android.intent.action.MAIN"/>
-        <category android:name="android.intent.category.LAUNCHER"/>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
-    </activity-alias>
+    </activity>
+
+    <service android:name=".LockScreenService" >
+    </service>
+
+    <receiver
+        android:name=".LockScreenIntentReceiver"
+        android:enabled="true"
+        android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED" />
+      </intent-filter>
+    </receiver>
+
+
+    <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" android:exported="false"/>
     <activity-alias android:label="BB" android:exported="true" android:icon="@mipmap/bb" android:name="app.ppix.io.mobile.MainActivitybb" android:enabled="false" android:targetActivity=".MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>

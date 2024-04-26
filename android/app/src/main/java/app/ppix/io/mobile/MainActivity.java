@@ -1,11 +1,19 @@
 package app.ppix.io.mobile;
 
+import android.app.KeyguardManager;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.telephony.PhoneStateListener;
+import android.telephony.TelephonyManager;
+import android.util.Log;
+import android.view.KeyEvent;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -27,16 +35,19 @@ public class MainActivity extends ReactActivity {
     // This is required for expo-splash-screen.
     setTheme(R.style.AppTheme);
     super.onCreate(null);
-    BroadcasterReceiver br = new BroadcasterReceiver();
-    IntentFilter filter = new IntentFilter();
-    filter.addAction(Intent.ACTION_SCREEN_OFF);
-    filter.addAction(Intent.ACTION_SCREEN_ON);
-    registerReceiver(br, filter);
+
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
       if (!Settings.canDrawOverlays(this)) {
         Intent i = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + this.getPackageName()));
         someActivityResultLauncher.launch(i);
       }
+    }
+
+    if (!(getIntent() != null && getIntent().hasExtra("kill")
+        && getIntent().getExtras().getInt("kill") == 1)) {
+      try {
+        startService(new Intent(this, LockScreenService.class));
+      } catch (Exception ignored) {}
     }
   }
 
@@ -101,9 +112,8 @@ public class MainActivity extends ReactActivity {
       return BuildConfig.IS_NEW_ARCHITECTURE_ENABLED;
     }
   }
-
   private void showMessage() {
-    Toast.makeText(this, "Essa funcionalidade é essencial para o app", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Essa funcionalidade é essencial para o app", Toast.LENGTH_SHORT).show();
   }
 
   ActivityResultLauncher<Intent> someActivityResultLauncher = registerForActivityResult(
@@ -111,6 +121,6 @@ public class MainActivity extends ReactActivity {
           result -> {
             if(result.getResultCode() == 101) {
               showMessage();
-            }
-          });
+              }
+            });
 }

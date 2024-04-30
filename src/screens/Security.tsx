@@ -14,14 +14,6 @@ interface IAppItemProps {
 export default function Security() {
   const [currentIcon, setCurrentIcon] = React.useState("");
 
-  const [appState, setAppState] = React.useState(AppState.currentState);
-
-  const _handleAppStateChange = (nextAppState: any) => {
-    if (appState.match(/inactive|background/) && nextAppState === "active") {
-      console.log("App has come to the foreground!");
-    }
-    setAppState(nextAppState);
-  };
 
   const handleChangeLocation = async (value: boolean, props: IAppItemProps) => {
     console.log(value)
@@ -50,30 +42,7 @@ export default function Security() {
     }
     
 
-  useFocusEffect(
-    useCallback(() => {
-      try{
-        async function loadIcon() {
-          if (Platform.OS === "android") {
-            const response = await getIcon();
-            console.log(
-              "🚀 ~ file: Security.tsx:28 ~ loadIcon ~ response",
-              response
-            );
 
-            setCurrentIcon(response);
-          }
-        }
-        loadIcon();
-
-        AppState.addEventListener("change", _handleAppStateChange);
-     } catch {
-
-     }
-
-      return () => {};
-    }, [])
-  );
 
   const AppItem = (props: IAppItemProps) => {
     return (

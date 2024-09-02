@@ -20,12 +20,12 @@ function axiosProvider({ children }: AxiosProvider) {
     const [load, setLoad] = useState(false)
     const Auth = useContext(AuthContext) 
     const api = axios.create({
-        baseURL: "http://77.37.40.46/api"
+        baseURL: "https://backend.pppix.app.br/api"
     });
 
     const apiContext = () => {
       let returnAxios = axios.create({
-                    baseURL: "http://77.37.40.46/api",
+                    baseURL: "https://backend.pppix.app.br/api",
                     headers: {
                         'accept': 'application/json'
                     }

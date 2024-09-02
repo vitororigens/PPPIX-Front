@@ -16,7 +16,6 @@ export default function Security() {
 
 
   const handleChangeLocation = async (value: boolean, props: IAppItemProps) => {
-    console.log(value)
 
     if (value) {
       console.log(props.item.iconName)

@@ -22,13 +22,9 @@ export function CarsScreen() {
   const navigation = useNavigation();
   const toast = useToast();
   const { authData, setAuthData } = useAuth();
-  console.log(authData);
-
   const [cars, setCars] = useState([]);
-  console.log(cars)
   const [search, setSearch] = useState('');
   const [selectedCar, setSelectedCar] = useState('');
-  console.log(selectedCar)
   const { api, load } = useAxios();
 
   function updateCars() {
